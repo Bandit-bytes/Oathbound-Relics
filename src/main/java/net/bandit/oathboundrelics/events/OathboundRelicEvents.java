@@ -9,6 +9,7 @@ import net.bandit.oathboundrelics.registry.ItemRegistry;
 import net.bandit.oathboundrelics.util.OathboundUtil;
 import net.bandit.oathboundrelics.util.SlothWeaponUtil;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.network.chat.Component;
 import net.minecraft.tags.EntityTypeTags;
@@ -30,6 +31,7 @@ import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDeathEvent;
 import net.neoforged.neoforge.event.entity.living.LivingExperienceDropEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
+import net.neoforged.neoforge.event.entity.player.CanContinueSleepingEvent;
 import net.neoforged.neoforge.event.entity.player.CanPlayerSleepEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.enchanting.EnchantmentLevelSetEvent;
@@ -443,7 +445,8 @@ public final class OathboundRelicEvents {
         }
     }
 
-    @SubscribeEvent
+    // LOWEST so a later listener from another mod cannot clear the Wakeful Doom problem.
+    @SubscribeEvent(priority = EventPriority.LOWEST)
     public static void onSleepAttempt(CanPlayerSleepEvent event) {
         if (!OathboundConfig.enableWakefulDoom()) {
             return;
@@ -460,6 +463,29 @@ public final class OathboundRelicEvents {
         }
 
         event.setProblem(Player.BedSleepingProblem.OTHER_PROBLEM);
+        player.displayClientMessage(
+                Component.translatable("message.oathboundrelics.wakeful_doom.no_rest").withStyle(ChatFormatting.DARK_PURPLE),
+                true
+        );
+    }
+
+    // Catches sleep started without going through CanPlayerSleepEvent, such as a direct startSleeping call.
+    @SubscribeEvent(priority = EventPriority.LOWEST)
+    public static void onContinueSleeping(CanContinueSleepingEvent event) {
+        if (!OathboundConfig.enableWakefulDoom()
+                || !(event.getEntity() instanceof ServerPlayer player)
+                || !OathboundUtil.isBranded(player)) {
+            return;
+        }
+
+        BlockPos sleepPos = player.getSleepingPos().orElse(null);
+        if (sleepPos == null
+                || (OathboundConfig.enableRiteOfRepose()
+                    && RiteOfReposeBlockEntity.isWithinRepose(player.level(), sleepPos))) {
+            return;
+        }
+
+        event.setContinueSleeping(false);
         player.displayClientMessage(
                 Component.translatable("message.oathboundrelics.wakeful_doom.no_rest").withStyle(ChatFormatting.DARK_PURPLE),
                 true
