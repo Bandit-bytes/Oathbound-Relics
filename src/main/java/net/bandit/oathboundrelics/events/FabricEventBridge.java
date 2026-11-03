@@ -1,6 +1,7 @@
 package net.bandit.oathboundrelics.events;
 
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
+import net.fabricmc.fabric.api.entity.event.v1.EntitySleepEvents;
 import net.fabricmc.fabric.api.entity.event.v1.ServerEntityCombatEvents;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;
 import net.fabricmc.fabric.api.event.lifecycle.v1.ServerTickEvents;
@@ -8,6 +9,7 @@ import net.fabricmc.fabric.api.event.player.AttackEntityCallback;
 import net.fabricmc.fabric.api.event.player.PlayerBlockBreakEvents;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayConnectionEvents;
 import net.fabricmc.fabric.api.entity.event.v1.ServerPlayerEvents;
+import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerPlayer;
 import net.bandit.oathboundrelics.data.PlayerDataStorage;
 import net.minecraft.world.InteractionResult;
@@ -16,12 +18,16 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.Projectile;
+import net.minecraft.world.level.Level;
 import net.bandit.oathboundrelics.fabricbridge.events.RegisterCommandsEvent;
+import net.bandit.oathboundrelics.fabricbridge.events.enchanting.EnchantmentLevelSetEvent;
 import net.bandit.oathboundrelics.fabricbridge.events.entity.living.LivingDamageEvent;
 import net.bandit.oathboundrelics.fabricbridge.events.entity.living.LivingDeathEvent;
+import net.bandit.oathboundrelics.fabricbridge.events.entity.living.LivingExperienceDropEvent;
 import net.bandit.oathboundrelics.fabricbridge.events.entity.living.LivingHealEvent;
 import net.bandit.oathboundrelics.fabricbridge.events.entity.living.LivingIncomingDamageEvent;
 import net.bandit.oathboundrelics.fabricbridge.events.entity.player.AttackEntityEvent;
+import net.bandit.oathboundrelics.fabricbridge.events.entity.player.CanPlayerSleepEvent;
 import net.bandit.oathboundrelics.fabricbridge.events.entity.player.PlayerEvent;
 import net.bandit.oathboundrelics.fabricbridge.events.level.BlockEvent;
 import net.bandit.oathboundrelics.fabricbridge.events.tick.PlayerTickEvent;
@@ -55,6 +61,8 @@ public final class FabricEventBridge {
                 CovetfangEvents.onPlayerTick(event);
                 OathboundBearerCurioEvents.onPlayerTick(event);
                 OathboundRelicEvents.onPlayerTick(event);
+                OathboundRelicEvents.onContinueSleeping(event);
+                AdditionalRelicEvents.onPlayerTick(event);
                 RuinwakeEvents.onPlayerTick(event);
                 SlothWeaponEvents.onPlayerTick(event);
                 SoulLanternEvents.onPlayerTick(event);
@@ -119,12 +127,32 @@ public final class FabricEventBridge {
             OathboundRelicEvents.onBreakBlock(new BlockEvent.BreakEvent(world, pos, player));
             return true;
         });
+
+        // Fires after vanilla's own bed checks, so a blocked bed can still set the player's spawn.
+        EntitySleepEvents.ALLOW_SLEEPING.register((player, pos) -> {
+            CanPlayerSleepEvent event = new CanPlayerSleepEvent(player, pos);
+            OathboundRelicEvents.onSleepAttempt(event);
+            return event.getProblem();
+        });
+    }
+
+    public static int fireExperienceDrop(LivingEntity entity, Player attackingPlayer, int experience) {
+        LivingExperienceDropEvent event = new LivingExperienceDropEvent(entity, attackingPlayer, experience);
+        OathboundRelicEvents.onXpDrop(event);
+        return event.getDroppedExperience();
+    }
+
+    public static int fireEnchantmentLevelSet(Level level, BlockPos pos, int enchantLevel) {
+        EnchantmentLevelSetEvent event = new EnchantmentLevelSetEvent(level, pos, enchantLevel);
+        OathboundRelicEvents.onEnchantingPower(event);
+        return event.getEnchantLevel();
     }
 
     public static float fireIncomingDamage(LivingEntity entity, DamageSource source, float amount) {
         LivingIncomingDamageEvent event = new LivingIncomingDamageEvent(entity, source, amount);
         OathboundRelicEvents.onIncomingDamage(event);
         VanitysEdgeEvents.onIncomingDamage(event);
+        AdditionalRelicEvents.onIncomingDamage(event);
         return event.resultAmount();
     }
 
@@ -151,6 +179,8 @@ public final class FabricEventBridge {
         RuinwakeEvents.onDamagePost(event);
         TitansRemnantEvents.onDamagePost(event);
         VanitysEdgeEvents.onDamagePost(event);
+        AdditionalRelicEvents.onPlayerDamaged(event);
+        AdditionalRelicEvents.onPlayerDealsDamage(event);
     }
 
     public static float fireLivingHeal(LivingEntity entity, float amount) {

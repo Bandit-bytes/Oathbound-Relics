@@ -30,6 +30,8 @@ public final class OathboundLootTables {
     public static final ResourceLocation TRAIL_RUINS_RARE = mc("archaeology/trail_ruins_rare");
     public static final ResourceLocation TRIAL_REWARD_RARE = mc("chests/trial_chambers/reward_rare");
     public static final ResourceLocation TRIAL_REWARD_OMINOUS_RARE = mc("chests/trial_chambers/reward_ominous_rare");
+    public static final ResourceLocation UNDERWATER_RUIN_BIG = mc("chests/underwater_ruin_big");
+    public static final ResourceLocation SHIPWRECK_TREASURE = mc("chests/shipwreck_treasure");
 
     public static final ResourceLocation WITHER = mc("entities/wither");
     public static final ResourceLocation WARDEN = mc("entities/warden");
@@ -51,6 +53,7 @@ public final class OathboundLootTables {
     public static final ResourceLocation INJECT_TRAIL_RUINS_RARE = mod("inject/chests/trail_ruins_rare_relics");
     public static final ResourceLocation INJECT_TRIAL_RARE = mod("inject/chests/trial_reward_rare_relics");
     public static final ResourceLocation INJECT_TRIAL_OMINOUS_RARE = mod("inject/chests/trial_reward_ominous_rare_relics");
+    public static final ResourceLocation INJECT_OCEAN = mod("inject/chests/ocean_relics");
 
     public static final ResourceLocation INJECT_WITHER_OBLIVION = mod("inject/entities/wither_oblivion_stone");
     public static final ResourceLocation INJECT_WARDEN_OBLIVION = mod("inject/entities/warden_oblivion_stone");

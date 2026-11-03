@@ -6,6 +6,7 @@ import net.bandit.oathboundrelics.config.FabricConfigBridge;
 import net.bandit.oathboundrelics.events.FabricEventBridge;
 import net.bandit.oathboundrelics.events.FabricWorldgenBridge;
 import net.bandit.oathboundrelics.loot.FabricLootInjection;
+import net.bandit.oathboundrelics.network.ModNetworking;
 import net.bandit.oathboundrelics.registry.*;
 import net.fabricmc.api.ModInitializer;
 import org.slf4j.Logger;
@@ -28,6 +29,8 @@ public final class OathboundRelicsMod implements ModInitializer {
         EffectRegistry.register();
         EntityRegistry.register();
         AttachmentRegistry.register();
+        IngredientRegistry.register();
+        ModNetworking.register();
 
         FabricEventBridge.register();
         FabricWorldgenBridge.register();

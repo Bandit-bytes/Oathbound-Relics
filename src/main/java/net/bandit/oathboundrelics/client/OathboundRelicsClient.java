@@ -1,10 +1,10 @@
 package net.bandit.oathboundrelics.client;
 
 import dev.emi.trinkets.api.client.TrinketRendererRegistry;
+import net.bandit.oathboundrelics.client.altar.NativeAltarRenderer;
 import net.bandit.oathboundrelics.client.renderer.HeavyCubeProjectileRenderer;
 import net.bandit.oathboundrelics.client.renderer.SoulGemRenderer;
 import net.bandit.oathboundrelics.client.renderer.SoulLanternTrinketRenderer;
-import net.bandit.oathboundrelics.client.altar.RiteOfSeveranceRenderer;
 import net.bandit.oathboundrelics.registry.BlockRegistry;
 import net.bandit.oathboundrelics.registry.BlockEntityRegistry;
 import net.bandit.oathboundrelics.registry.EntityRegistry;
@@ -21,9 +21,17 @@ public class OathboundRelicsClient implements ClientModInitializer {
     public void onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlock(BlockRegistry.SOUL_LANTERN_BLOCK.get(), RenderType.cutout());
         TrinketRendererRegistry.registerRenderer(ItemRegistry.SOUL_LANTERN.get(), new SoulLanternTrinketRenderer());
-        BlockEntityRendererRegistry.register(BlockEntityRegistry.RITE_OF_SEVERANCE_BE.get(), RiteOfSeveranceRenderer::new);
+        BlockEntityRendererRegistry.register(
+                BlockEntityRegistry.RITE_OF_SEVERANCE_BE.get(),
+                context -> new NativeAltarRenderer<>(context, NativeAltarRenderer.BODY_HELL)
+        );
+        BlockEntityRendererRegistry.register(
+                BlockEntityRegistry.RITE_OF_REPOSE_BE.get(),
+                context -> new NativeAltarRenderer<>(context, NativeAltarRenderer.BODY_STONE)
+        );
         EntityRendererRegistry.register(EntityRegistry.HEAVY_CUBE_PROJECTILE.get(), HeavyCubeProjectileRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.SOUL_GEM.get(), SoulGemRenderer::new);
         TitansRemnantItemProperties.register();
+        SkybrandClientInput.register();
     }
 }

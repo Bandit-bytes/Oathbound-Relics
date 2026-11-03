@@ -1,7 +1,6 @@
 package net.bandit.oathboundrelics.util;
 
 import net.bandit.oathboundrelics.data.PersistentData;
-
 import net.bandit.oathboundrelics.data.PlayerDataStorage;
 import net.bandit.oathboundrelics.config.OathboundConfig;
 import net.bandit.oathboundrelics.curio.items.TitansRemnantItem;
@@ -273,6 +272,17 @@ public final class TitansRemnantUtil {
 
     public static void addVoidCharges(Player player, int amount) {
         setVoidCharges(player, getVoidCharges(player) + amount);
+    }
+
+    public static final String SKYBRAND_GLIDING_TAG =
+            "oathboundrelics_titans_remnant_skybrand_gliding";
+
+    public static boolean isSkybrandGliding(Player player) {
+        return PersistentData.get(player).getBoolean(SKYBRAND_GLIDING_TAG);
+    }
+
+    public static void setSkybrandGliding(Player player, boolean value) {
+        PersistentData.get(player).putBoolean(SKYBRAND_GLIDING_TAG, value);
     }
 
 

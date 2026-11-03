@@ -75,7 +75,7 @@ public final class OathboundEnchantingUtil {
     }
 
     private static float getOverEnchantChance(int enchantingPower) {
-        return Math.min(0.90F, (enchantingPower - OVER_ENCHANT_THRESHOLD) * 0.10F);
+        return Math.min(0.90F, Math.max(0.0F, (enchantingPower - OVER_ENCHANT_THRESHOLD) * 0.10F));
     }
 
     private static long buildSeed(

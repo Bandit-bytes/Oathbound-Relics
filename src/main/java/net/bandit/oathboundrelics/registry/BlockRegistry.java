@@ -1,6 +1,7 @@
 package net.bandit.oathboundrelics.registry;
 
 import net.bandit.oathboundrelics.OathboundRelicsMod;
+import net.bandit.oathboundrelics.blocks.RiteOfReposeBlock;
 import net.bandit.oathboundrelics.blocks.RiteOfSeveranceBlock;
 import net.bandit.oathboundrelics.blocks.SoulLanternBlock;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -49,6 +50,14 @@ public class BlockRegistry {
                     BlockBehaviour.Properties.ofFullCopy(Blocks.CRYING_OBSIDIAN)
                             .strength(5.0F, 1200.0F)
                             .lightLevel(state -> 10)
+                            .noOcclusion()
+            ));
+
+    public static final FabricRegistrySupplier<Block> RITE_OF_REPOSE = registerBlock("rite_of_repose",
+            () -> new RiteOfReposeBlock(
+                    BlockBehaviour.Properties.ofFullCopy(Blocks.POLISHED_DEEPSLATE)
+                            .strength(5.0F, 1200.0F)
+                            .lightLevel(state -> 7)
                             .noOcclusion()
             ));
 

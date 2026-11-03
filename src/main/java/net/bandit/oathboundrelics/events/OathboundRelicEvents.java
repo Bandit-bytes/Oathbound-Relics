@@ -2,13 +2,18 @@ package net.bandit.oathboundrelics.events;
 
 import net.bandit.oathboundrelics.data.PlayerDataStorage;
 import net.bandit.oathboundrelics.OathboundRelicsMod;
+import net.bandit.oathboundrelics.blocks.blockentity.RiteOfReposeBlockEntity;
 import net.bandit.oathboundrelics.config.OathboundConfig;
 import net.bandit.oathboundrelics.data.BrandedTimeData;
 import net.bandit.oathboundrelics.registry.AttachmentRegistry;
 import net.bandit.oathboundrelics.registry.ItemRegistry;
 import net.bandit.oathboundrelics.util.OathboundUtil;
 import net.bandit.oathboundrelics.util.SlothWeaponUtil;
+import net.minecraft.ChatFormatting;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.tags.EntityTypeTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -44,6 +49,9 @@ public final class OathboundRelicEvents {
     private static final int MAX_OVER_ENCHANT_BONUS = 1;
     private static final Map<UUID, Long> BLOOD_TOLL_COOLDOWNS = new HashMap<>();
 
+    private static final ThreadLocal<Boolean> RITE_PULSE_DAMAGE =
+            ThreadLocal.withInitial(() -> false);
+
     private static boolean canAttemptOverEnchant(int enchantingPower) {
         return enchantingPower > OVER_ENCHANT_THRESHOLD;
     }
@@ -58,6 +66,21 @@ public final class OathboundRelicEvents {
     private static void setCooldown(Map<UUID, Long> map, Player player, long gameTime, long ticks) {
         map.put(player.getUUID(), gameTime + ticks);
     }
+
+    public static void dealRitePulseDamage(ServerPlayer player, float amount) {
+        if (amount <= 0.0F || !player.isAlive()) {
+            return;
+        }
+
+        boolean previous = RITE_PULSE_DAMAGE.get();
+        try {
+            RITE_PULSE_DAMAGE.set(true);
+            player.hurt(player.damageSources().magic(), amount);
+        } finally {
+            RITE_PULSE_DAMAGE.set(previous);
+        }
+    }
+
     public static void onIncomingDamage(LivingIncomingDamageEvent event) {
         if (!(event.getEntity() instanceof Player player)) {
             return;
@@ -72,7 +95,10 @@ public final class OathboundRelicEvents {
             refreshBrandedActivity(player, 20 * 5);
         }
         if (branded) {
-            if (OathboundConfig.enableFrailty()) {
+            boolean ignoreFrailtyForRitePulse =
+                    RITE_PULSE_DAMAGE.get() && OathboundConfig.severancePulseDamageIgnoresFrailty();
+
+            if (OathboundConfig.enableFrailty() && !ignoreFrailtyForRitePulse) {
                 event.setAmount((float) (event.getAmount() * OathboundConfig.incomingDamageMultiplier()));
             }
 
@@ -244,7 +270,14 @@ public final class OathboundRelicEvents {
             return;
         }
 
-        player.hurt(player.damageSources().generic(), cost);
+        // Key of the Sealed Abyss: the toll is paid in hunger, unless the bearer is already starving.
+        if (OathboundConfig.enableKeyOfTheSealedAbyss()
+                && OathboundUtil.hasCurio(player, ItemRegistry.KEY_OF_THE_SEALED_ABYSS.get())
+                && player.getFoodData().getFoodLevel() > 0) {
+            player.causeFoodExhaustion((float) (cost * OathboundConfig.keyOfTheSealedAbyssExhaustionPerHealth()));
+        } else {
+            player.hurt(player.damageSources().generic(), cost);
+        }
         setCooldown(BLOOD_TOLL_COOLDOWNS, player, gameTime, OathboundConfig.bloodTollCooldownTicks());
     }
     public static void onKill(LivingDeathEvent event) {
@@ -398,12 +431,46 @@ public final class OathboundRelicEvents {
             return;
         }
 
-        if (!OathboundUtil.isBranded(event.getEntity())) {
+        Player player = event.getEntity();
+        if (!OathboundUtil.isBranded(player)) {
+            return;
+        }
+
+        if (OathboundConfig.enableRiteOfRepose()
+                && RiteOfReposeBlockEntity.isWithinRepose(player.level(), event.getPos())) {
             return;
         }
 
         event.setProblem(Player.BedSleepingProblem.OTHER_PROBLEM);
+        player.displayClientMessage(
+                Component.translatable("message.oathboundrelics.wakeful_doom.no_rest").withStyle(ChatFormatting.DARK_PURPLE),
+                true
+        );
     }
+
+    // Catches sleep started without going through the attempt check, such as a direct startSleeping call.
+    public static void onContinueSleeping(PlayerTickEvent.Post event) {
+        Player player = event.getEntity();
+        if (!OathboundConfig.enableWakefulDoom()
+                || !player.isSleeping()
+                || !OathboundUtil.isBranded(player)) {
+            return;
+        }
+
+        BlockPos sleepPos = player.getSleepingPos().orElse(null);
+        if (sleepPos == null
+                || (OathboundConfig.enableRiteOfRepose()
+                    && RiteOfReposeBlockEntity.isWithinRepose(player.level(), sleepPos))) {
+            return;
+        }
+
+        player.stopSleepInBed(false, true);
+        player.displayClientMessage(
+                Component.translatable("message.oathboundrelics.wakeful_doom.no_rest").withStyle(ChatFormatting.DARK_PURPLE),
+                true
+        );
+    }
+
     public static void onBreakBlock(BlockEvent.BreakEvent event) {
         if (!(event.getPlayer() instanceof Player player)) {
             return;

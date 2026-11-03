@@ -36,6 +36,15 @@ public final class OathboundUtil {
                 || FabricOathboundRelicDeathProtection.hasProtectedRelic(player);
     }
 
+    public static boolean hasRelicEquippedRaw(Player player) {
+        if (player == null) {
+            return false;
+        }
+        return CuriosApi.getCuriosInventory(player)
+                .map(inv -> !inv.findCurios(ItemRegistry.OATHBOUND_RELIC.get()).isEmpty())
+                .orElse(false);
+    }
+
     public static boolean hasCurio(Player player, Item item) {
         if (player == null || player.isSpectator()) {
             return false;
@@ -48,6 +57,10 @@ public final class OathboundUtil {
 
     public static boolean canSeverRelic(Player player) {
         return player != null && PersistentData.get(player).getBoolean(TAG_SEVERANCE_ALLOW_UNEQUIP);
+    }
+
+    public static boolean canIntentionallyUnequipRelic(Player player) {
+        return player != null && (player.isCreative() || canSeverRelic(player));
     }
 
     public static boolean isInSeveranceRitual(Player player) {

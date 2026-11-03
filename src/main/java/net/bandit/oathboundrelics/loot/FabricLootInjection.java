@@ -31,6 +31,8 @@ public final class FabricLootInjection {
             Map.entry(OathboundLootTables.TRAIL_RUINS_RARE, OathboundLootTables.INJECT_TRAIL_RUINS_RARE),
             Map.entry(OathboundLootTables.TRIAL_REWARD_RARE, OathboundLootTables.INJECT_TRIAL_RARE),
             Map.entry(OathboundLootTables.TRIAL_REWARD_OMINOUS_RARE, OathboundLootTables.INJECT_TRIAL_OMINOUS_RARE),
+            Map.entry(OathboundLootTables.UNDERWATER_RUIN_BIG, OathboundLootTables.INJECT_OCEAN),
+            Map.entry(OathboundLootTables.SHIPWRECK_TREASURE, OathboundLootTables.INJECT_OCEAN),
             Map.entry(OathboundLootTables.WITHER, OathboundLootTables.INJECT_WITHER_OBLIVION),
             Map.entry(OathboundLootTables.WARDEN, OathboundLootTables.INJECT_WARDEN_OBLIVION),
             Map.entry(OathboundLootTables.ENDER_DRAGON, OathboundLootTables.INJECT_DRAGON_OBLIVION),

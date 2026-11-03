@@ -101,6 +101,10 @@ public final class FabricOathboundRelicDeathProtection {
     }
 
     public static void tick(ServerPlayer player) {
+        if (player.tickCount % 20 == 0) {
+            removeDuplicateEquippedRelics(player);
+        }
+
         CompoundTag data = PersistentData.get(player);
         if (!data.contains(BACKUP_TAG)) {
             return;
@@ -159,6 +163,37 @@ public final class FabricOathboundRelicDeathProtection {
         data.remove(SLOT_NAME_TAG);
         data.remove(SLOT_INDEX_TAG);
         data.remove(RESTORE_DELAY_TAG);
+    }
+
+    private static void removeDuplicateEquippedRelics(ServerPlayer player) {
+        TrinketsApi.getTrinketComponent(player).ifPresent(component -> {
+            int removed = 0;
+            boolean kept = false;
+
+            for (Tuple<SlotReference, ItemStack> pair : component.getAllEquipped()) {
+                if (!pair.getB().is(ItemRegistry.OATHBOUND_RELIC.get())) {
+                    continue;
+                }
+                if (!kept) {
+                    kept = true;
+                    continue;
+                }
+
+                SlotReference reference = pair.getA();
+                reference.inventory().setItem(reference.index(), ItemStack.EMPTY);
+                reference.inventory().markUpdate();
+                removed++;
+            }
+
+            if (removed > 0) {
+                component.update();
+                OathboundRelicsMod.LOGGER.warn(
+                        "Removed {} duplicate Oathbound Relic(s) from {}",
+                        removed,
+                        player.getGameProfile().getName()
+                );
+            }
+        });
     }
 
     private static boolean hasRelic(ServerPlayer player) {

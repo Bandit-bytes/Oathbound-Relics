@@ -215,6 +215,65 @@ public final class OathboundConfig {
         FabricConfigBridge.defineDefault("oathbound_relic.giveStarterOathboundRelic", true);
         FabricConfigBridge.defineDefault("bearer_curios.brandkeepers_mercy.enabled", true);
         FabricConfigBridge.defineDefault("oathbound_relic.bloodTollCooldownTicks", 60);
+        FabricConfigBridge.defineDefault("rite_of_severance.ritualDurationTicks", 20 * 30);
+        FabricConfigBridge.defineDefault("rite_of_severance.pulseIntervalTicks", 40);
+        FabricConfigBridge.defineDefault("rite_of_severance.pulseDamagePercent", 0.01D);
+        FabricConfigBridge.defineDefault("rite_of_severance.pulseMinDamage", 0.5D);
+        FabricConfigBridge.defineDefault("rite_of_severance.pulseMaxDamage", 1.0D);
+        FabricConfigBridge.defineDefault("rite_of_severance.pulseDamageIgnoresFrailty", true);
+        FabricConfigBridge.defineDefault("rite_of_severance.maxDistance", 7.0D);
+        FabricConfigBridge.defineDefault("rite_of_severance.armorPenalty", 0.20D);
+        FabricConfigBridge.defineDefault("rite_of_severance.provocationRadius", 10.0D);
+        FabricConfigBridge.defineDefault("rite_of_severance.emberFireTicks", 60);
+        FabricConfigBridge.defineDefault("rite_of_severance.fractureWeaknessDurationTicks", 60);
+        FabricConfigBridge.defineDefault("rite_of_severance.fractureWeaknessAmplifier", 1);
+        FabricConfigBridge.defineDefault("rite_of_severance.fractureSlownessDurationTicks", 60);
+        FabricConfigBridge.defineDefault("rite_of_severance.fractureSlownessAmplifier", 0);
+        FabricConfigBridge.defineDefault("rite_of_severance.doomDarknessDurationTicks", 80);
+        FabricConfigBridge.defineDefault("rite_of_severance.doomMiningFatigueDurationTicks", 80);
+        FabricConfigBridge.defineDefault("rite_of_severance.doomMiningFatigueAmplifier", 1);
+        FabricConfigBridge.defineDefault("rite_of_severance.provocationHungerDurationTicks", 80);
+        FabricConfigBridge.defineDefault("rite_of_severance.provocationHungerAmplifier", 1);
+        FabricConfigBridge.defineDefault("rite_of_severance.oppressionWeaknessDurationTicks", 80);
+        FabricConfigBridge.defineDefault("rite_of_severance.oppressionWeaknessAmplifier", 2);
+        FabricConfigBridge.defineDefault("rite_of_severance.oppressionSlownessDurationTicks", 80);
+        FabricConfigBridge.defineDefault("rite_of_severance.oppressionSlownessAmplifier", 1);
+        FabricConfigBridge.defineDefault("rite_of_repose.enabled", true);
+        FabricConfigBridge.defineDefault("rite_of_repose.radius", 8.0D);
+        FabricConfigBridge.defineDefault("bound_curios.key_of_the_sealed_abyss.enabled", true);
+        FabricConfigBridge.defineDefault("bound_curios.key_of_the_sealed_abyss.exhaustionPerHealth", 4.0D);
+        FabricConfigBridge.defineDefault("bound_curios.knell_of_the_forsworn.enabled", true);
+        FabricConfigBridge.defineDefault("bound_curios.knell_of_the_forsworn.healthThreshold", 0.40D);
+        FabricConfigBridge.defineDefault("bound_curios.knell_of_the_forsworn.radius", 6.0D);
+        FabricConfigBridge.defineDefault("bound_curios.knell_of_the_forsworn.knockback", 1.2D);
+        FabricConfigBridge.defineDefault("bound_curios.knell_of_the_forsworn.weaknessDurationTicks", 20 * 5);
+        FabricConfigBridge.defineDefault("bound_curios.knell_of_the_forsworn.weaknessAmplifier", 0);
+        FabricConfigBridge.defineDefault("bound_curios.knell_of_the_forsworn.slownessDurationTicks", 20 * 5);
+        FabricConfigBridge.defineDefault("bound_curios.knell_of_the_forsworn.slownessAmplifier", 0);
+        FabricConfigBridge.defineDefault("bound_curios.knell_of_the_forsworn.cooldownTicks", 20 * 30);
+        FabricConfigBridge.defineDefault("bound_curios.chalice_of_the_bloodsworn.enabled", true);
+        FabricConfigBridge.defineDefault("bound_curios.chalice_of_the_bloodsworn.lifestealPercent", 0.10D);
+        FabricConfigBridge.defineDefault("bound_curios.chalice_of_the_bloodsworn.maxHealPerHit", 3.0D);
+        FabricConfigBridge.defineDefault("bound_curios.chalice_of_the_bloodsworn.exhaustionPerHit", 0.4D);
+        FabricConfigBridge.defineDefault("bound_curios.scourgeborne_amulet.enabled", true);
+        FabricConfigBridge.defineDefault("bound_curios.scourgeborne_amulet.reductionPerEffect", 0.06D);
+        FabricConfigBridge.defineDefault("bound_curios.scourgeborne_amulet.maxReduction", 0.30D);
+        FabricConfigBridge.defineDefault("free_relics.pendant_of_the_drowned_choir.enabled", true);
+        FabricConfigBridge.defineDefault("free_relics.pendant_of_the_drowned_choir.oxygenBonus", 2.0D);
+        FabricConfigBridge.defineDefault("free_relics.pendant_of_the_drowned_choir.submergedMiningSpeedBonus", 0.8D);
+        FabricConfigBridge.defineDefault("free_relics.phial_of_quenched_embers.enabled", true);
+        FabricConfigBridge.defineDefault("free_relics.phial_of_quenched_embers.burningTimeReduction", 0.5D);
+        FabricConfigBridge.defineDefault("free_relics.phial_of_quenched_embers.fireDamageMultiplier", 0.70D);
+        FabricConfigBridge.defineDefault("free_relics.elixir_of_eternal_dusk.enabled", true);
+        FabricConfigBridge.defineDefault("free_relics.elixir_of_eternal_dusk.lightThreshold", 7);
+        FabricConfigBridge.defineDefault("free_relics.elixir_of_eternal_dusk.movementSpeedBonus", 0.10D);
+        FabricConfigBridge.defineDefault("free_relics.elixir_of_eternal_dusk.attackDamageBonus", 0.15D);
+        FabricConfigBridge.defineDefault("free_relics.clot_of_stubborn_ichor.enabled", true);
+        FabricConfigBridge.defineDefault("free_relics.clot_of_stubborn_ichor.maxHealthBonus", 2.0D);
+        FabricConfigBridge.defineDefault("free_relics.clot_of_stubborn_ichor.healthThreshold", 0.50D);
+        FabricConfigBridge.defineDefault("free_relics.clot_of_stubborn_ichor.regenerationDurationTicks", 20 * 4);
+        FabricConfigBridge.defineDefault("free_relics.clot_of_stubborn_ichor.regenerationAmplifier", 0);
+        FabricConfigBridge.defineDefault("free_relics.clot_of_stubborn_ichor.cooldownTicks", 20 * 20);
     }
 
     private static boolean B(String key, boolean defaultValue) {
@@ -442,4 +501,63 @@ public final class OathboundConfig {
     public static boolean giveStarterOathboundRelic() { return B("oathbound_relic.giveStarterOathboundRelic", true); }
     public static boolean enableBrandkeepersMercy() { return B("bearer_curios.brandkeepers_mercy.enabled", true); }
     public static int bloodTollCooldownTicks() { return I("oathbound_relic.bloodTollCooldownTicks", 60); }
+    public static int severanceRitualDurationTicks() { return I("rite_of_severance.ritualDurationTicks", 20 * 30); }
+    public static int severancePulseIntervalTicks() { return I("rite_of_severance.pulseIntervalTicks", 40); }
+    public static double severancePulseDamagePercent() { return D("rite_of_severance.pulseDamagePercent", 0.01D); }
+    public static double severancePulseMinDamage() { return D("rite_of_severance.pulseMinDamage", 0.5D); }
+    public static double severancePulseMaxDamage() { return D("rite_of_severance.pulseMaxDamage", 1.0D); }
+    public static boolean severancePulseDamageIgnoresFrailty() { return B("rite_of_severance.pulseDamageIgnoresFrailty", true); }
+    public static double severanceMaxDistance() { return D("rite_of_severance.maxDistance", 7.0D); }
+    public static double severanceArmorPenalty() { return D("rite_of_severance.armorPenalty", 0.20D); }
+    public static double severanceProvocationRadius() { return D("rite_of_severance.provocationRadius", 10.0D); }
+    public static int severanceEmberFireTicks() { return I("rite_of_severance.emberFireTicks", 60); }
+    public static int severanceFractureWeaknessDurationTicks() { return I("rite_of_severance.fractureWeaknessDurationTicks", 60); }
+    public static int severanceFractureWeaknessAmplifier() { return I("rite_of_severance.fractureWeaknessAmplifier", 1); }
+    public static int severanceFractureSlownessDurationTicks() { return I("rite_of_severance.fractureSlownessDurationTicks", 60); }
+    public static int severanceFractureSlownessAmplifier() { return I("rite_of_severance.fractureSlownessAmplifier", 0); }
+    public static int severanceDoomDarknessDurationTicks() { return I("rite_of_severance.doomDarknessDurationTicks", 80); }
+    public static int severanceDoomMiningFatigueDurationTicks() { return I("rite_of_severance.doomMiningFatigueDurationTicks", 80); }
+    public static int severanceDoomMiningFatigueAmplifier() { return I("rite_of_severance.doomMiningFatigueAmplifier", 1); }
+    public static int severanceProvocationHungerDurationTicks() { return I("rite_of_severance.provocationHungerDurationTicks", 80); }
+    public static int severanceProvocationHungerAmplifier() { return I("rite_of_severance.provocationHungerAmplifier", 1); }
+    public static int severanceOppressionWeaknessDurationTicks() { return I("rite_of_severance.oppressionWeaknessDurationTicks", 80); }
+    public static int severanceOppressionWeaknessAmplifier() { return I("rite_of_severance.oppressionWeaknessAmplifier", 2); }
+    public static int severanceOppressionSlownessDurationTicks() { return I("rite_of_severance.oppressionSlownessDurationTicks", 80); }
+    public static int severanceOppressionSlownessAmplifier() { return I("rite_of_severance.oppressionSlownessAmplifier", 1); }
+    public static boolean enableRiteOfRepose() { return B("rite_of_repose.enabled", true); }
+    public static double riteOfReposeRadius() { return D("rite_of_repose.radius", 8.0D); }
+    public static boolean enableKeyOfTheSealedAbyss() { return B("bound_curios.key_of_the_sealed_abyss.enabled", true); }
+    public static double keyOfTheSealedAbyssExhaustionPerHealth() { return D("bound_curios.key_of_the_sealed_abyss.exhaustionPerHealth", 4.0D); }
+    public static boolean enableKnellOfTheForsworn() { return B("bound_curios.knell_of_the_forsworn.enabled", true); }
+    public static double knellHealthThreshold() { return D("bound_curios.knell_of_the_forsworn.healthThreshold", 0.40D); }
+    public static double knellRadius() { return D("bound_curios.knell_of_the_forsworn.radius", 6.0D); }
+    public static double knellKnockback() { return D("bound_curios.knell_of_the_forsworn.knockback", 1.2D); }
+    public static int knellWeaknessDurationTicks() { return I("bound_curios.knell_of_the_forsworn.weaknessDurationTicks", 20 * 5); }
+    public static int knellWeaknessAmplifier() { return I("bound_curios.knell_of_the_forsworn.weaknessAmplifier", 0); }
+    public static int knellSlownessDurationTicks() { return I("bound_curios.knell_of_the_forsworn.slownessDurationTicks", 20 * 5); }
+    public static int knellSlownessAmplifier() { return I("bound_curios.knell_of_the_forsworn.slownessAmplifier", 0); }
+    public static int knellCooldownTicks() { return I("bound_curios.knell_of_the_forsworn.cooldownTicks", 20 * 30); }
+    public static boolean enableChaliceOfTheBloodsworn() { return B("bound_curios.chalice_of_the_bloodsworn.enabled", true); }
+    public static double chaliceLifestealPercent() { return D("bound_curios.chalice_of_the_bloodsworn.lifestealPercent", 0.10D); }
+    public static double chaliceMaxHealPerHit() { return D("bound_curios.chalice_of_the_bloodsworn.maxHealPerHit", 3.0D); }
+    public static double chaliceExhaustionPerHit() { return D("bound_curios.chalice_of_the_bloodsworn.exhaustionPerHit", 0.4D); }
+    public static boolean enableScourgeborneAmulet() { return B("bound_curios.scourgeborne_amulet.enabled", true); }
+    public static double scourgeborneReductionPerEffect() { return D("bound_curios.scourgeborne_amulet.reductionPerEffect", 0.06D); }
+    public static double scourgeborneMaxReduction() { return D("bound_curios.scourgeborne_amulet.maxReduction", 0.30D); }
+    public static boolean enableDrownedChoirPendant() { return B("free_relics.pendant_of_the_drowned_choir.enabled", true); }
+    public static double drownedChoirOxygenBonus() { return D("free_relics.pendant_of_the_drowned_choir.oxygenBonus", 2.0D); }
+    public static double drownedChoirSubmergedMiningSpeedBonus() { return D("free_relics.pendant_of_the_drowned_choir.submergedMiningSpeedBonus", 0.8D); }
+    public static boolean enablePhialOfQuenchedEmbers() { return B("free_relics.phial_of_quenched_embers.enabled", true); }
+    public static double phialBurningTimeReduction() { return D("free_relics.phial_of_quenched_embers.burningTimeReduction", 0.5D); }
+    public static double phialFireDamageMultiplier() { return D("free_relics.phial_of_quenched_embers.fireDamageMultiplier", 0.70D); }
+    public static boolean enableElixirOfEternalDusk() { return B("free_relics.elixir_of_eternal_dusk.enabled", true); }
+    public static int elixirLightThreshold() { return I("free_relics.elixir_of_eternal_dusk.lightThreshold", 7); }
+    public static double elixirMovementSpeedBonus() { return D("free_relics.elixir_of_eternal_dusk.movementSpeedBonus", 0.10D); }
+    public static double elixirAttackDamageBonus() { return D("free_relics.elixir_of_eternal_dusk.attackDamageBonus", 0.15D); }
+    public static boolean enableClotOfStubbornIchor() { return B("free_relics.clot_of_stubborn_ichor.enabled", true); }
+    public static double clotMaxHealthBonus() { return D("free_relics.clot_of_stubborn_ichor.maxHealthBonus", 2.0D); }
+    public static double clotHealthThreshold() { return D("free_relics.clot_of_stubborn_ichor.healthThreshold", 0.50D); }
+    public static int clotRegenerationDurationTicks() { return I("free_relics.clot_of_stubborn_ichor.regenerationDurationTicks", 20 * 4); }
+    public static int clotRegenerationAmplifier() { return I("free_relics.clot_of_stubborn_ichor.regenerationAmplifier", 0); }
+    public static int clotCooldownTicks() { return I("free_relics.clot_of_stubborn_ichor.cooldownTicks", 20 * 20); }
 }

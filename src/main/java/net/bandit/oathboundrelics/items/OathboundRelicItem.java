@@ -14,6 +14,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageSource;
 import dev.emi.trinkets.api.SlotReference;
+import net.bandit.oathboundrelics.events.FabricOathboundRelicDeathProtection;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -64,7 +65,7 @@ public class OathboundRelicItem extends Item implements ICurioItem {
         if (!(slotContext.entity() instanceof Player player)) {
             return false;
         }
-        return !OathboundUtil.isBranded(player);
+        return !OathboundUtil.hasRelicEquippedRaw(player);
     }
 
     @Override
@@ -72,7 +73,7 @@ public class OathboundRelicItem extends Item implements ICurioItem {
         if (!(slotContext.entity() instanceof Player player)) {
             return false;
         }
-        return player.isCreative() || OathboundUtil.canSeverRelic(player);
+        return OathboundUtil.canIntentionallyUnequipRelic(player);
     }
 
 
@@ -82,7 +83,22 @@ public class OathboundRelicItem extends Item implements ICurioItem {
             return false;
         }
 
-        return player.isCreative() || OathboundUtil.canSeverRelic(player);
+        return OathboundUtil.canIntentionallyUnequipRelic(player);
+    }
+
+    @Override
+    public void onUnequip(ItemStack stack, SlotReference slot, LivingEntity entity) {
+        // Trinkets reports slot changes on the next tick, so a dead player here is the
+        // death protection stripping the relic rather than an intentional removal.
+        if (!(entity instanceof Player player) || player.level().isClientSide() || !player.isAlive()) {
+            return;
+        }
+
+        // Only explicit escape hatches may invalidate the death-protection backup.
+        // Grave/corpse mods remove the slot without receiving one of these permissions.
+        if (OathboundUtil.canIntentionallyUnequipRelic(player)) {
+            FabricOathboundRelicDeathProtection.clearBackup(player);
+        }
     }
 
     @Override
@@ -201,6 +217,7 @@ public class OathboundRelicItem extends Item implements ICurioItem {
 
         addCurseLine(tooltip, OathboundConfig.enableBloodToll(),
                 "tooltip.oathboundrelics.oathbound_relic.curse_4",
+                secondsFromTicks(OathboundConfig.bloodTollCooldownTicks()),
                 formatDecimal(OathboundConfig.bloodTollHealthCost()));
 
         addCurseLine(tooltip, OathboundConfig.enableLivingEmber(),
@@ -209,8 +226,7 @@ public class OathboundRelicItem extends Item implements ICurioItem {
 
         addCurseLine(tooltip, OathboundConfig.enableSoulFracture(),
                 "tooltip.oathboundrelics.oathbound_relic.curse_6",
-                secondsFromTicks(OathboundConfig.respawnWeaknessDurationTicks()),
-                secondsFromTicks(OathboundConfig.respawnSlownessDurationTicks()));
+                soulFracturePenalty());
 
         addCurseLine(tooltip, OathboundConfig.enableWakefulDoom(),
                 "tooltip.oathboundrelics.oathbound_relic.curse_7");
@@ -302,6 +318,25 @@ public class OathboundRelicItem extends Item implements ICurioItem {
                     Component.translatable(key, args)
             ).withStyle(ChatFormatting.DARK_GRAY));
         }
+    }
+
+    // Effects with a duration of 0 are never applied on respawn, so leave them out of the tooltip.
+    private static Component soulFracturePenalty() {
+        int weaknessTicks = OathboundConfig.respawnWeaknessDurationTicks();
+        int slownessTicks = OathboundConfig.respawnSlownessDurationTicks();
+        String prefix = "tooltip.oathboundrelics.oathbound_relic.curse_6.";
+
+        if (weaknessTicks > 0 && slownessTicks > 0) {
+            return Component.translatable(prefix + "both",
+                    secondsFromTicks(weaknessTicks), secondsFromTicks(slownessTicks));
+        }
+        if (weaknessTicks > 0) {
+            return Component.translatable(prefix + "weakness", secondsFromTicks(weaknessTicks));
+        }
+        if (slownessTicks > 0) {
+            return Component.translatable(prefix + "slowness", secondsFromTicks(slownessTicks));
+        }
+        return Component.empty();
     }
 
     private static void addBlessingLine(List<Component> tooltip, boolean enabled, String key, Object... args) {
