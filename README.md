@@ -5,7 +5,7 @@ Become Branded, survive its penalties, and unlock dangerous new abilities, effec
 
 **Minecraft 1.21.1 · Fabric**
 
-> This is the Fabric version (2.0.x). It is behind the NeoForge version on [`master`](https://github.com/Bandit-bytes/Oathbound-Relics) and does not have the newest content yet, such as the Rite of Repose.
+> This is the Fabric version. The NeoForge version lives on the [`master`](https://github.com/Bandit-bytes/Oathbound-Relics/tree/master) branch.
 
 ## Features
 
@@ -31,6 +31,7 @@ Forge weapons of Sloth, Pride, Envy, and Wrath from tablets and idols: the **Let
 
 ### Rituals
 - **Rite of Severance:** tear the Oath free and destroy the relic, if you survive the rite
+- **Rite of Repose:** a quiet altar that lets the Branded sleep nearby despite Wakeful Doom
 
 ### Also
 - **Aredrite** gems, ore, and armor
@@ -70,7 +71,7 @@ config/oathboundrelics-common.properties
 | Branch | Minecraft | Loader | Version |
 |---|---|---|---|
 | [`master`](https://github.com/Bandit-bytes/Oathbound-Relics/tree/master) | 1.21.1 | NeoForge | 2.2.x |
-| [`fabric-1.21.1`](https://github.com/Bandit-bytes/Oathbound-Relics/tree/fabric-1.21.1) | 1.21.1 | Fabric | 2.0.x |
+| [`fabric-1.21.1`](https://github.com/Bandit-bytes/Oathbound-Relics/tree/fabric-1.21.1) | 1.21.1 | Fabric | 2.2.x |
 
 ## Building from Source
 
