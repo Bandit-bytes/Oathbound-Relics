@@ -1,0 +1,71 @@
+name: Bug report
+description: Something isn't working, crashes, or behaves wrong.
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill in as much as you can — it makes fixing it a lot faster.
+  - type: dropdown
+    id: loader
+    attributes:
+      label: Loader
+      description: Oathbound Relics is for Minecraft 1.21.1.
+      options:
+        - NeoForge
+        - Fabric
+    validations:
+      required: true
+  - type: input
+    id: mod-version
+    attributes:
+      label: Oathbound Relics version
+      placeholder: "2.2.2-1.21.1"
+    validations:
+      required: true
+  - type: input
+    id: affected
+    attributes:
+      label: Which relic, curse, weapon, or ritual?
+      placeholder: "e.g. Wakeful Doom, Covetfang, Rite of Severance"
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: A clear description of the bug.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Equip the Oathbound Relic ...
+        2. ...
+        3. See ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+  - type: textarea
+    id: logs
+    attributes:
+      label: Crash report / latest.log
+      description: Upload to https://mclo.gs or https://pastebin.com and paste the link. Please don't paste whole logs here.
+  - type: textarea
+    id: mods
+    attributes:
+      label: Other mods / modpack
+      description: Modpack name and version, or other mods installed (especially curios/trinkets, sleep, or combat mods).
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I'm using the latest version of Oathbound Relics for my loader.
+          required: true
+        - label: I searched existing issues and this hasn't been reported yet.
+          required: true

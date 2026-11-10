@@ -5,6 +5,8 @@ Become Branded, survive its penalties, and unlock dangerous new abilities, effec
 
 **Minecraft 1.21.1 · NeoForge**
 
+> A Fabric version (2.0.x) lives on the [`fabric-1.21.1`](https://github.com/Bandit-bytes/Oathbound-Relics/tree/fabric-1.21.1) branch.
+
 ## Features
 
 ### The Oath
@@ -65,6 +67,13 @@ To apply defaults to new worlds, place a copy in the `defaultconfigs` folder.
 
 `/oathbound branded_time` lets operators inspect and adjust a player's Branded time, which gates Apex remnants and some sin weapons.
 
+## Branches
+
+| Branch | Minecraft | Loader | Version |
+|---|---|---|---|
+| [`master`](https://github.com/Bandit-bytes/Oathbound-Relics/tree/master) | 1.21.1 | NeoForge | 2.2.x |
+| [`fabric-1.21.1`](https://github.com/Bandit-bytes/Oathbound-Relics/tree/fabric-1.21.1) | 1.21.1 | Fabric | 2.0.x |
+
 ## Building from Source
 
 ```
@@ -75,7 +84,7 @@ The built jar is written to `build/libs/`.
 
 ## Reporting Issues
 
-Please report bugs on the [issue tracker](https://github.com/Bandit-bytes/oathbound-relics-issue-tracker/issues).
+Please report bugs and suggestions on the [issue tracker](https://github.com/Bandit-bytes/Oathbound-Relics/issues/new/choose) using the bug report or feature request template, and say whether you play on NeoForge or Fabric. For crashes, include a link to your crash report or `latest.log` (via [mclo.gs](https://mclo.gs)).
 
 ## License
 
