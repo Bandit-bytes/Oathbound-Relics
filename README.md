@@ -5,7 +5,7 @@ Become Branded, survive its penalties, and unlock dangerous new abilities, effec
 
 **Minecraft 1.21.1 · NeoForge**
 
-> A Fabric version (2.0.x) lives on the [`fabric-1.21.1`](https://github.com/Bandit-bytes/Oathbound-Relics/tree/fabric-1.21.1) branch.
+> A Fabric version lives on the [`fabric-1.21.1`](https://github.com/Bandit-bytes/Oathbound-Relics/tree/fabric-1.21.1) branch.
 
 ## Features
 
@@ -72,7 +72,7 @@ To apply defaults to new worlds, place a copy in the `defaultconfigs` folder.
 | Branch | Minecraft | Loader | Version |
 |---|---|---|---|
 | [`master`](https://github.com/Bandit-bytes/Oathbound-Relics/tree/master) | 1.21.1 | NeoForge | 2.2.x |
-| [`fabric-1.21.1`](https://github.com/Bandit-bytes/Oathbound-Relics/tree/fabric-1.21.1) | 1.21.1 | Fabric | 2.0.x |
+| [`fabric-1.21.1`](https://github.com/Bandit-bytes/Oathbound-Relics/tree/fabric-1.21.1) | 1.21.1 | Fabric | 2.2.x |
 
 ## Building from Source
 
