@@ -3,8 +3,11 @@ package net.bandit.oathboundrelics.util;
 import net.bandit.oathboundrelics.config.OathboundConfig;
 import net.minecraft.core.Holder;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.minecraft.world.item.enchantment.EnchantmentInstance;
+import net.minecraft.world.item.enchantment.ItemEnchantments;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,6 +54,39 @@ public final class OathboundEnchantingUtil {
         }
 
         return modified;
+    }
+
+    /**
+     * Restores over-max enchantment levels that the anvil clamped away. A result enchantment
+     * is raised only up to the highest level already present on one of the inputs, so
+     * combining never creates a new over-level (V + V stays V).
+     *
+     * @return true if the result stack was changed
+     */
+    public static boolean restoreOverLevels(ItemStack result, ItemStack left, ItemStack right) {
+        ItemEnchantments resultEnchantments = EnchantmentHelper.getEnchantmentsForCrafting(result);
+        if (resultEnchantments.isEmpty()) {
+            return false;
+        }
+
+        ItemEnchantments leftEnchantments = EnchantmentHelper.getEnchantmentsForCrafting(left);
+        ItemEnchantments rightEnchantments = EnchantmentHelper.getEnchantmentsForCrafting(right);
+        ItemEnchantments.Mutable restored = new ItemEnchantments.Mutable(resultEnchantments);
+        boolean changed = false;
+
+        for (Holder<Enchantment> enchantment : resultEnchantments.keySet()) {
+            int inputLevel = Math.max(leftEnchantments.getLevel(enchantment), rightEnchantments.getLevel(enchantment));
+            if (inputLevel > enchantment.value().getMaxLevel()
+                    && resultEnchantments.getLevel(enchantment) < inputLevel) {
+                restored.set(enchantment, inputLevel);
+                changed = true;
+            }
+        }
+
+        if (changed) {
+            EnchantmentHelper.setEnchantments(result, restored.toImmutable());
+        }
+        return changed;
     }
 
     private static int maybeOvercap(
