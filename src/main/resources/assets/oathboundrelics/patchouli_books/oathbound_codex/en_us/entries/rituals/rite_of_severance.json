@@ -9,28 +9,27 @@
     {
       "type": "patchouli:text",
       "title": "Rite of Severance",
-      "text": "Not all who swear the Oath wish to bear it forever. For such cowards—or survivors—there exists one final answer: the $(l)Rite of Severance$(). This altar does not simply remove the brand. It tears it free.$(br2)The Rite destroys the $(item)Oathbound Relic$() utterly. Nothing of the bond remains but ash."
+      "text": "The $(l)Rite of Severance$() removes the Oath for good. It destroys your $(item)Oathbound Relic$() and cleanses the brand."
     },
     {
       "type": "patchouli:crafting",
-      "title": "The Altar",
       "recipe": "oathboundrelics:rite_of_severance",
-      "text": "Construct the altar and place it where you intend to be judged. It is not a gentle thing, nor a safe one."
+      "title": "The Altar"
     },
     {
       "type": "patchouli:text",
       "title": "Requirements",
-      "text": "To begin the Rite, the bearer must still have the $(item)Oathbound Relic$() equipped.$(br2)The altar also demands:$(li)1 Oblivion Stone$(li)4 Echo Shards$(li)4 Crying Obsidian$(li)16 Soul Soil$(br2)The Rite may only begin $(thing)at night$() or within $(thing)The End$()."
+      "text": "You must have the $(item)Oathbound Relic$() equipped.$(br2)The altar needs:$(li)1 Oblivion Stone$(li)4 Echo Shards$(li)4 Crying Obsidian$(li)16 Soul Soil$(br2)You can only start it $(thing)at night$() or in $(thing)The End$()."
     },
     {
       "type": "patchouli:text",
-      "title": "What Happens",
-      "text": "Once awakened, the altar binds the bearer to itself for $(thing)30 seconds$(). The branded must remain within $(thing)7 blocks$() of the altar or the Rite fails.$(br2)Every few moments the altar forces the curses of the Oath back through the body: flame, weakness, hunger, darkness, shattered protection, and the rage of nearby creatures."
+      "title": "The Rite",
+      "text": "The rite lasts $(thing)30 seconds$(). Stay within $(thing)7 blocks$() of the altar.$(br2)During the rite, the altar keeps hitting you with the Oath's curses: fire, weakness, hunger, darkness, broken armor, and angry nearby mobs."
     },
     {
       "type": "patchouli:text",
-      "title": "Completion",
-      "text": "If the bearer survives, the Relic is $(bold)destroyed$(), the brand is $(bold)cleansed$(), and only a trace remains: $(item)Fractured Relic Ash$().$(br2)Should the bearer flee, die, or lose the Relic, or should the altar be broken before the Rite ends, the Severance fails—and the Oath endures."
+      "title": "Result",
+      "text": "Survive, and the Relic is destroyed, the brand is removed, and you get $(item)Fractured Relic Ash$().$(br2)The rite fails if you leave the area, die, lose the Relic, or the altar is broken."
     }
   ]
 }

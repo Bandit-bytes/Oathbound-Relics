@@ -6,44 +6,44 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Tablets$() are the thematic keys. $(l)Idols$() are the forged ritual components. Neither one is the final weapon on its own."
+      "text": "Each sin weapon needs its $(l)Tablet$() (found as loot) and its $(l)Idol$() (crafted)."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:tablet_of_stillness",
-      "text": "Tablet of Stillness: tied to Sloth and used to awaken the blank form of the Sloth weapon."
+      "text": "Sloth: Lethargic Greatsword."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:tablet_of_exaltation",
-      "text": "Tablet of Exaltation: tied to Pride and used to awaken Vanity's Edge."
+      "text": "Pride: Vanity's Edge."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:tablet_of_coveting",
-      "text": "Tablet of Coveting: tied to Envy and used to awaken Covetfang."
+      "text": "Envy: Covetfang."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:tablet_of_vengeance",
-      "text": "Tablet of Vengeance: tied to Wrath and used to awaken Ruinwake. It can be discovered in Bastion treasure and ominous Trial Chamber rewards."
+      "text": "Wrath: Ruinwake. Found in Bastion treasure and ominous Trial Chamber rewards."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "oathboundrelics:burdened_flail_idol",
       "recipe2": "oathboundrelics:mirrorsteel_idol",
-      "text": "Two of the three idol recipes. If your recipe file names differ from these IDs, update the page recipe IDs to match.",
-      "title": "Idol Recipes"
+      "title": "Idol Recipes",
+      "text": "Burdened Flail Idol (Sloth) and Mirrorsteel Idol (Pride). The Mirrorsteel Idol is also the Ascended remnant catalyst."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "oathboundrelics:hollow_fang_idol",
-      "text": "The Hollow Fang Idol is the Envy weapon's forged ritual component."
+      "text": "Hollow Fang Idol (Envy)."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "oathboundrelics:grudgebound_idol",
-      "text": "The Grudgebound Idol is Wrath's forged ritual component."
+      "text": "Grudgebound Idol (Wrath)."
     }
   ]
 }

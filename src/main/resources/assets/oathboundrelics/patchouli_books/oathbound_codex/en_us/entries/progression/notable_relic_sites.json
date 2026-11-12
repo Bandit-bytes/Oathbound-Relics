@@ -6,19 +6,19 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "$(l)Ancient City / Jungle Temple$()$(br)Ancient Cities favor Hollow Eye, Shroud of the Forsaken, Eye of the Sleepless Witness, Tablets of Stillness and Coveting, Oblivion Stone, the Knell of the Forsworn, Elixir of Eternal Dusk, and a rare Key of the Sealed Abyss. Jungle Temples lean toward Hollow Eye, Eye of the Sleepless Witness, Tablets of Stillness and Coveting, and Oblivion Stone."
+      "text": "$(l)Ancient City / Jungle Temple$()$(br)Ancient Cities: Hollow Eye, Shroud of the Forsaken, Eye of the Sleepless Witness, Tablets of Stillness and Coveting, Oblivion Stone, Knell of the Forsworn, Elixir of Eternal Dusk, and rarely the Key of the Sealed Abyss.$(br2)Jungle Temples: Hollow Eye, Eye of the Sleepless Witness, Tablets of Stillness and Coveting, and Oblivion Stone."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Strongholds$()$(br)Libraries favor Censer of Hollow Prayer, Eye of the Sleepless Witness, Oathbound Reliquary, tablets, the Knell of the Forsworn, and the Elixir of Eternal Dusk. Support loot favors Gravebell Locket, Mourner's Thread, Nebula Lens, Censer of Hollow Prayer, and one of the current sources of Brandkeeper's Mercy."
+      "text": "$(l)Strongholds$()$(br)Libraries: Censer of Hollow Prayer, Eye of the Sleepless Witness, Oathbound Reliquary, tablets, Knell of the Forsworn, and Elixir of Eternal Dusk.$(br2)Other chests: Gravebell Locket, Mourner's Thread, Nebula Lens, Censer of Hollow Prayer, and Brandkeeper's Mercy."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)End / Trial / Nether$()$(br)End Cities are one of the current sources of Brandkeeper's Mercy, alongside void-bound relics, the Key of the Sealed Abyss, and Oblivion Stone. Ominous Trial rewards can also yield Brandkeeper's Mercy. Nether and Bastion loot lean toward ash, judgment, penance, martyrdom, and last-breath relics, plus the Chalice of the Bloodsworn, Phial of Quenched Embers, and Scourgeborne Amulet."
+      "text": "$(l)End / Trial / Nether$()$(br)End Cities: Brandkeeper's Mercy, void relics, Key of the Sealed Abyss, and Oblivion Stone. Ominous Trial rewards can also give Brandkeeper's Mercy.$(br2)Nether Fortresses: Ashen Nail, Censer of Ash, Nail of the First Martyr, Relic of the Last Breath, Torch of Gravesong, Phial of Quenched Embers, Scourgeborne Amulet, Oblivion Stone.$(br2)Bastions: Chain of the Penitent, Chalice of the Bloodsworn, Nail of the First Martyr, Relic of the Last Breath, Torch of Gravesong, Tablet of Vengeance, Oblivion Stone."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Ruins, Trials & the Sea$()$(br)Trail Ruins and Trial Chambers can yield the Clot of Stubborn Ichor. Woodland Mansions hide the Chalice of the Bloodsworn. Desert Pyramids hold the Phial of Quenched Embers. Shipwreck treasure, large ocean ruins, and rare trail ruins can surrender the Pendant of the Drowned Choir."
+      "text": "$(l)Ruins, Trials & the Sea$()$(br)Trail Ruins and Trial Chambers: Clot of Stubborn Ichor.$(br)Woodland Mansions: Chalice of the Bloodsworn.$(br)Desert Pyramids: Phial of Quenched Embers.$(br)Shipwrecks, large ocean ruins, and rare trail ruins: Pendant of the Drowned Choir."
     }
   ]
 }

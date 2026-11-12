@@ -1,6 +1,6 @@
 {
   "name": "The Titan Remnants",
-  "description": "Dormant fragments of impossible power. The first three stages can be used by anyone. Higher stages demand the Oath. Upgrade a remnant by holding it in your main hand and right-clicking while the required catalyst is in your offhand.",
+  "description": "Six-stage relics dropped by bosses and rare mobs. Upgrade one by holding it in your main hand with the catalyst in your offhand, then using it.",
   "icon": "oathboundrelics:skybrand_feather",
   "sortnum": 5
 }

@@ -7,7 +7,7 @@
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:lethargic_greatsword",
-      "text": "Sloth is built around crushing weight, burden, and exhaustion. It always deals full damage, but every failure leaves the wielder lazier and less effective."
+      "text": "Always deals full damage, but every hit that doesn't kill makes you lazier."
     },
     {
       "type": "patchouli:text",
@@ -16,12 +16,12 @@
     {
       "type": "patchouli:crafting",
       "recipe": "oathboundrelics:burdened_flail_idol",
-      "text": "First forge the $(l)Burdened Flail Idol$()."
+      "text": "First craft the $(l)Burdened Flail Idol$()."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "oathboundrelics:lethargic_greatsword",
-      "text": "Then combine $(l)Void Ashes$(), the $(l)Tablet of Stillness$(), the $(l)Burdened Flail Idol$(), and a $(l)Nebula Ring$() to forge the final weapon."
+      "text": "Then combine $(l)Void Ashes$(), the $(l)Tablet of Stillness$(), the $(l)Burdened Flail Idol$(), and a $(l)Nebula Ring$()."
     }
   ]
 }

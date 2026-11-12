@@ -7,20 +7,16 @@
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:oblivion_stone",
-      "text": "A dead stone that remembers what the world was trying to forget. This is the core rare material of higher relic work."
+      "text": "Rare material for rings, idols, Aredrite armor, the Rite of Severance, and the first remnant upgrade."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Oblivion Stone$() is used in ring progression, idol forging, Aredrite armor, and other high-tier recipes. The draft wiki places it as a rare reward from dangerous structures and major bosses."
+      "text": "$(l)Where to find Oblivion Stone$()$(br)$(li)50% drop from the Wither, Warden, Ender Dragon, and Elder Guardian$(li)Rare chest loot in Ancient Cities, End Cities, Stronghold libraries, Bastions, Nether Fortresses, Trial Chambers, Trail Ruins, Jungle Temples, and Woodland Mansions"
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:void_ashes",
-      "text": "What remains when End-born power is burned past memory. Void Ashes are the last fuel before awakening the sin weapons."
-    },
-    {
-      "type": "patchouli:text",
-      "text": "The final forge recipes for Sloth, Pride, and Envy all require $(l)Void Ashes$()."
+      "text": "Shulkers drop 4-7. Needed for every sin weapon and the Latent -> Awakened remnant upgrade."
     }
   ]
 }

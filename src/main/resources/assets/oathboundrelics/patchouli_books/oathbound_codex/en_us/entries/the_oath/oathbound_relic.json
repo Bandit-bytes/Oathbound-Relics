@@ -6,21 +6,21 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The $(l)Oathbound Relic$() is the heart of the mod. Equipping it marks the bearer as $(l:oathboundrelics:glossary/remnant_terms#branded)Branded$(), awakens Oathbound systems, and opens the path to stronger curios, remnants, and eventually the sin weapons.$(br2)Power is never free in this mod. The Relic gives blessings, but it also imposes curses that define the entire tone of progression."
+      "text": "Equipping the $(l)Oathbound Relic$() makes you $(l:oathboundrelics:glossary/remnant_terms#branded)Branded$(). It powers bound curios and higher Titan's Remnant stages, and you need it for the sin weapons.$(br2)It gives both blessings and curses. Values are config defaults."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:oathbound_relic",
-      "text": "$(li)Binds permanently once equipped$(li)Persists through death$(li)Awakens bound relics and Titan's Remnants$(li)Acts as the gateway to late-game forging",
-      "title": "The Covenant"
+      "title": "The Covenant",
+      "text": "$(li)Binds permanently once equipped$(li)Persists through death$(li)Awakens bound relics and Titan's Remnants$(li)Required for late-game forging"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Default curses$()$(br)$(li)Frailty: you take extra incoming damage$(li)Provocation: nearby neutral creatures become hostile$(li)Shattered Plate: armor is less effective$(li)Blood Toll: Violence draws a blood price from the bearer, but only once each short interval$(li)Living Ember: fire clings longer$(li)Soul Fracture: respawning leaves part of the soul behind$(li)Wakeful Doom: sleep offers no refuge, except beside a Rite of Repose"
+      "text": "$(l)Curses$()$(br)$(li)Frailty: you take extra damage$(li)Provocation: neutral mobs turn hostile$(li)Shattered Plate: armor is less effective$(li)Blood Toll: your first hit every few seconds costs health$(li)Living Ember: fire lasts longer on you$(li)Soul Fracture: when you respawn, part of your soul is left behind; go back for it$(li)Wakeful Doom: you can't sleep, except near a Rite of Repose"
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Default blessings$()$(br)$(li)Bonus Looting$(li)Bonus Fortune$(li)Much higher XP from kills$(li)Higher enchanting power near tables$(li)Bonus attack speed$(li)Emergency Absorption at low health$(br2)These values are based on your config defaults. If you rebalance the config later, update this page to match."
+      "text": "$(l)Blessings$()$(br)$(li)Bonus Looting$(li)Bonus Fortune$(li)Much more XP from kills$(li)Higher enchanting power$(li)Bonus attack speed$(li)Absorption at low health"
     }
   ]
 }

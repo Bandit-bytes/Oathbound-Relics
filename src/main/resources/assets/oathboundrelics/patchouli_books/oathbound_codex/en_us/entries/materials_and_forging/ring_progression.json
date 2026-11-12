@@ -6,22 +6,22 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The ring line is one of the simplest crafted progressions in the mod. It is intentionally readable, and it also feeds directly into the endgame weapon forging path."
+      "text": "Gold Ring -> Cyan Ring -> Nebula Ring. Each upgrade adds an Oblivion Stone. Every sin weapon needs a Nebula Ring."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "oathboundrelics:gold_ring",
-      "text": "The $(l)Gold Ring$() is the basic starter ring and grants +1 Armor by default."
+      "text": "$(l)Gold Ring$(): +1 Armor."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "oathboundrelics:cyan_ring",
-      "text": "The $(l)Cyan Ring$() upgrades from the Gold Ring and Oblivion Stone. It grants +2 Armor by default."
+      "text": "$(l)Cyan Ring$(): +2 Armor."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "oathboundrelics:nebula_ring",
-      "text": "The $(l)Nebula Ring$() upgrades from the Cyan Ring and Oblivion Stone. It grants +3 Armor by default and is intended to add +1 Ring slot while worn."
+      "text": "$(l)Nebula Ring$(): +3 Armor and +1 ring slot."
     }
   ]
 }

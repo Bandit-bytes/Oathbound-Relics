@@ -7,17 +7,17 @@
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:ember_seed",
       "title": "Ember Seed",
-      "text": "A remnant of furnace-heat, attrition, and rising momentum. The Seed rewards those who stay in the fight until the fire starts feeding back into them."
+      "text": "Fire remnant. Combat builds $(thing)Heat$() for speed and attack speed. Dropped by the Ender Dragon."
     },
     {
       "type": "patchouli:text",
       "title": "Dormant and Latent",
-      "text": "$(l)Dormant$(): Grants fire immunity and scorches melee attackers. Even asleep, the Seed answers pain with heat.$(br2)$(l)Latent$(): Harmful effects begin fading faster, but rain and immersion become dangerous to the bearer. The Seed dislikes being cooled, and that weakness becomes part of its identity."
+      "text": "$(l)Dormant$(): Fire immunity. Burns melee attackers.$(br2)$(l)Latent$(): Harmful effects wear off faster, but rain and water become dangerous to you."
     },
     {
       "type": "patchouli:text",
       "title": "Awakened, Ascended, Transcendent, Apex",
-      "text": "$(l)Awakened$(): The Seed unlocks $(thing)Heat$(). Taking damage and dealing damage both build it, and low health can trigger a fiery recovery burst.$(br2)$(l)Ascended$(): Heat grants stronger speed and attack speed, arrows can burn away before landing, and burning enemies begin feeding life back into the bearer.$(br2)$(l)Transcendent$(): Negative effects are stripped clean and rain no longer matters.$(br2)$(l)Apex$(): At extreme Heat the bearer becomes a furnace in motion, with the strongest scaling and the fiercest offensive pressure."
+      "text": "$(l)Awakened$(): Unlocks $(thing)Heat$(). Taking or dealing damage builds it. Low health can trigger a fiery recovery burst.$(br2)$(l)Ascended$(): More speed and attack speed from Heat. Some arrows burn up before hitting you. Burning enemies heal you.$(br2)$(l)Transcendent$(): Removes negative effects. Rain no longer matters.$(br2)$(l)Apex$(): Strongest Heat scaling."
     }
   ]
 }

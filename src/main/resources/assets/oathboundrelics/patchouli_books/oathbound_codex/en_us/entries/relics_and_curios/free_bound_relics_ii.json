@@ -7,27 +7,27 @@
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:thornbound_carapace",
-      "text": "Reflect $(l)20% of incoming damage$() back at attackers. Best used when you expect repeated direct hits."
+      "text": "Reflect $(l)20% of incoming damage$() back at attackers."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:voidstep_band",
-      "text": "Negates fall damage. One of the cleanest traversal and safety relics in the mod."
+      "text": "No fall damage."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:executioners_coin",
-      "text": "Deal $(l)30% more damage$() to enemies below $(l)30% health$(). This is a finisher relic."
+      "text": "Deal $(l)30% more damage$() to enemies below $(l)30% health$()."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:relic_of_the_last_breath",
-      "text": "Prevents one lethal hit, then leaves you alive with emergency Absorption and Regeneration. Default cooldown: $(l)5 minutes$()."
+      "text": "Survive one lethal hit and gain Absorption and Regeneration. Cooldown: $(l)5 minutes$()."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:torch_of_gravesong",
-      "text": "Deal $(l)25% more damage$() to undead, and undead kills grant a burst of Strength. A dedicated anti-undead relic."
+      "text": "Deal $(l)25% more damage$() to undead. Killing undead gives a short Strength boost."
     }
   ]
 }

@@ -6,27 +6,27 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "A second set of bound curios. Like the first, these sleep unless the bearer is Branded. Most of them work with the Oath's own curses instead of against them."
+      "text": "More bound curios. These also only work while you are Branded."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:key_of_the_sealed_abyss",
-      "text": "$(l)Blood Toll$() drains hunger instead of health. If you are already starving, the toll takes blood again. A charm for bearers who fight often and eat well."
+      "text": "$(l)Blood Toll$() drains hunger instead of health. If you're starving, it takes health again."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:knell_of_the_forsworn",
-      "text": "When a hit leaves you below $(l)40% health$(), the Knell tolls. Monsters within $(l)6 blocks$() are knocked back and get $(l)Weakness I$() and $(l)Slowness I$() for 5s. Cooldown: $(l)30 seconds$()."
+      "text": "When a hit leaves you below $(l)40% health$(), monsters within $(l)6 blocks$() are knocked back and get Weakness I and Slowness I for 5s. Cooldown: $(l)30s$()."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:chalice_of_the_bloodsworn",
-      "text": "Melee hits restore $(l)10% of the damage dealt$() as health, up to 1.5 hearts per hit. Each draught adds a little hunger, so it pairs poorly with an empty stomach."
+      "text": "Melee hits heal you for $(l)10% of the damage dealt$(), up to 1.5 hearts per hit. Each heal costs a little hunger."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:scourgeborne_amulet",
-      "text": "Take $(l)6% less damage$() for each harmful effect on you, up to $(l)30%$(). The Oath, the Severance, and your enemies all supply the afflictions."
+      "text": "Take $(l)6% less damage$() for each harmful effect on you, up to $(l)30%$()."
     }
   ]
 }
