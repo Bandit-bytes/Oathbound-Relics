@@ -7,17 +7,17 @@
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:void_pearl",
       "title": "Void Pearl",
-      "text": "A remnant of darkness, decay, and survival that should not be possible. The Pearl grows strongest where light weakens and death starts to lose its claim."
+      "text": "Darkness and death-denial remnant. Strongest in low light. Dropped by Shulkers."
     },
     {
       "type": "patchouli:text",
       "title": "Dormant and Latent",
-      "text": "$(l)Dormant$(): Grants airless survival, shortens harmful effects over time, inflicts withering decay on strikes, and may deny a lethal blow.$(br2)$(l)Latent$(): Harmful effects are shortened more aggressively, and the Pearl becomes more reliable at refusing death without yet revealing its full hunger."
+      "text": "$(l)Dormant$(): No need for air. Harmful effects wear off faster. Your hits inflict $(thing)Withering Decay$(). May deny a lethal hit.$(br2)$(l)Latent$(): Harmful effects wear off even faster. Denies lethal hits more reliably."
     },
     {
       "type": "patchouli:text",
       "title": "Awakened, Ascended, Transcendent, Apex",
-      "text": "$(l)Awakened$(): In low light, nearby enemies begin suffering a field of wither and weakness, and fatal blows are no longer left to chance.$(br2)$(l)Ascended$(): Darkness now feeds the bearer directly with speed and attack speed, while decayed enemies hit back more weakly.$(br2)$(l)Transcendent$(): The aura widens, strips beneficial effects, and the Pearl's refusal of death becomes far more complete.$(br2)$(l)Apex$(): The bearer becomes hardest to kill in darkness, and decayed prey below the threshold can simply be finished outright."
+      "text": "$(l)Awakened$(): In low light, nearby enemies get Wither and Weakness ($(thing)Hollow Dominion$()). Lethal-hit denial is no longer random.$(br2)$(l)Ascended$(): Darkness gives you speed and attack speed. Decayed enemies deal less damage.$(br2)$(l)Transcendent$(): Bigger aura that strips beneficial effects. Much stronger death denial.$(br2)$(l)Apex$(): Hardest to kill in darkness. Decayed enemies below a health threshold can be killed outright."
     }
   ]
 }

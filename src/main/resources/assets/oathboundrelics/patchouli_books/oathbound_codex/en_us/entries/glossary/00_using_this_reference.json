@@ -6,11 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "This section exists to answer the most common player question in Oathbound Relics: $(thing)\"What does that actually mean?\"$()$(br2)If a tooltip uses a named state such as $(item)Laziness$(), $(item)Judged$(), $(item)Tremor$(), $(item)Heat$(), or $(item)Hollow Dominion$(), look it up here for a plain-English explanation."
-    },
-    {
-      "type": "patchouli:text",
-      "text": "Not every term in this category is a separate potion effect. Some are $(thing)custom meters$(), $(thing)weapon states$(), or $(thing)player-facing names$() for a group of buffs and debuffs. When that is the case, the entry will say so directly."
+      "text": "Definitions for the named states you'll see in tooltips, such as $(item)Laziness$(), $(item)Judged$(), $(item)Tremor$(), $(item)Heat$(), and $(item)Hollow Dominion$().$(br2)Some are real potion effects. Others are meters, weapon states, or a name for a group of effects."
     }
   ]
 }

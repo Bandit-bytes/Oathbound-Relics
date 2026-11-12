@@ -7,7 +7,7 @@
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:vanitys_edge",
-      "text": "Pride rewards superiority, control, and killing cleanly. It becomes terrifying at high health and humiliating when its wielder fails."
+      "text": "Strong at high health, punishing at low health. Hurts you when a hit doesn't kill."
     },
     {
       "type": "patchouli:text",
@@ -16,12 +16,12 @@
     {
       "type": "patchouli:crafting",
       "recipe": "oathboundrelics:mirrorsteel_idol",
-      "text": "First forge the $(l)Mirrorsteel Idol$()."
+      "text": "First craft the $(l)Mirrorsteel Idol$()."
     },
     {
       "type": "patchouli:crafting",
       "recipe": "oathboundrelics:vanitys_edge",
-      "text": "Then combine $(l)Void Ashes$(), the $(l)Tablet of Exaltation$(), the $(l)Mirrorsteel Idol$(), and a $(l)Nebula Ring$() to forge Vanity's Edge."
+      "text": "Then combine $(l)Void Ashes$(), the $(l)Tablet of Exaltation$(), the $(l)Mirrorsteel Idol$(), and a $(l)Nebula Ring$()."
     }
   ]
 }

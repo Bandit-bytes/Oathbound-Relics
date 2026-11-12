@@ -6,11 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Bearer curios are the more elaborate relics. They are not just simple passives; they shape the entire fight or the way the wearer survives pressure.$(br2)This section is also where the book uses the term $(l)Renewal$(): in this codex, Renewal means sustained recovery or emergency healing support, usually through $(l)Regeneration$(), $(l)Absorption$(), or both."
-    },
-    {
-      "type": "patchouli:text",
-      "text": "$(l)Examples$()$(br)$(li)The Reliquary provides defensive Renewal and can punish overloading yourself with too many bearer curios$(li)The Chain turns damage taken into bonus damage later$(li)The Sleepless Eye is about information and holding ground$(li)The Hollow Prayer Censer creates a hostile zone while sustaining the bearer$(li)The First Martyr Nail rewards pressure on a single target"
+      "text": "Bearer curios are stronger than normal relics, and most come with a cost or a condition.$(br2)$(li)$(l)Reliquary$(): extra charm slots and sustain; Hunger if overloaded$(li)$(l)Chain$(): damage taken becomes bonus damage$(li)$(l)Eye$(): defense when still, speed when moving$(li)$(l)Censer$(): weakens nearby monsters, heals you$(li)$(l)Nail$(): rewards killing one marked target$(li)$(l)Mercy$(): ends Provocation at full attunement"
     }
   ]
 }

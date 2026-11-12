@@ -6,15 +6,11 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "The sin weapons are the late-game centerpiece of the mod. They are not normal loot, and they are not supposed to be simple swords with bigger numbers.$(br2)Every one of them has a matching $(l)Tablet$(), a matching $(l)Idol$(), access to $(l)Void Ashes$(), and the final forge recipe. They also share the Branded-time attunement gate."
+      "text": "Four late-game weapons: $(l)Sloth$(), $(l)Pride$(), $(l)Envy$(), and $(l)Wrath$(). Each is very strong and has a serious drawback."
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Shared rules$()$(br)$(li)You must be Branded$(li)You must have endured nearly all of the Branded progress track$(li)The tablet is the thematic key$(li)The idol is the forged ritual component$(li)The final recipe is the true awakening, not just a loot drop"
-    },
-    {
-      "type": "patchouli:text",
-      "text": "The current quartet is $(l)Sloth$(), $(l)Pride$(), $(l)Envy$(), and $(l)Wrath$(). Each punishes a different failure: collapse, loss of superiority, hollow comparison, and violence released without purpose."
+      "text": "$(l)To forge one you need$()$(br)$(li)To be Branded with 99.5% Branded Progress$(li)Its Tablet (found as loot)$(li)Its Idol (crafted)$(li)Void Ashes$(li)A Nebula Ring"
     }
   ]
 }

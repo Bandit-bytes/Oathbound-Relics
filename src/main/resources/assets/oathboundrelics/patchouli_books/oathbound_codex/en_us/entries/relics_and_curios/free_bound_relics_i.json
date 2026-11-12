@@ -6,32 +6,32 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "These relics are simpler to understand than the bearer curios. Most are standalone survival or combat tools that do not require reading a whole mechanic tree before they make sense."
+      "text": "Free-bound relics work for anyone, Branded or not."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:shroud_of_the_forsaken",
-      "text": "When a hit would bring you to $(l)3 hearts or less$(), the triggering hit is softened and you gain brief Resistance. Default cooldown: $(l)60 seconds$()."
+      "text": "When a hit would leave you at $(l)3 hearts or less$(), that hit is reduced and you gain brief Resistance. Cooldown: $(l)60s$()."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:vulture_charm",
-      "text": "Gain $(l)50% more XP$() from kills. Straightforward progression relic."
+      "text": "Gain $(l)50% more XP$() from kills."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:hollow_eye",
-      "text": "Strips $(l)Blindness$() and $(l)Darkness$() and reveals invisible nearby creatures. It does not brighten the world; it tears away deception."
+      "text": "Removes $(l)Blindness$() and $(l)Darkness$(), and reveals nearby invisible creatures."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:censer_of_ash",
-      "text": "Burning enemies take $(l)20% more damage$(), and burning targets are easier to track because the censer repeatedly reveals them."
+      "text": "Burning enemies take $(l)20% more damage$() and are repeatedly revealed."
     },
     {
       "type": "patchouli:spotlight",
       "item": "oathboundrelics:mourners_thread",
-      "text": "On kill, restore food, a little saturation, and a small amount of health. Good for long PvE runs where sustain matters."
+      "text": "On kill, restore some food, saturation, and health."
     }
   ]
 }
