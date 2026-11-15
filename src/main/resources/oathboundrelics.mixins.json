@@ -7,7 +7,8 @@
     "EnchantmentMenuMixin",
     "EnchantmentTooltipMixin",
     "EntityPersistentDataMixin",
-    "LivingEntityEventMixin"
+    "LivingEntityEventMixin",
+    "MobTargetMixin"
   ],
   "client": [],
   "injectors": {

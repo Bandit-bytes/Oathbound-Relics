@@ -2,6 +2,7 @@ package net.bandit.oathboundrelics.registry;
 
 import net.bandit.oathboundrelics.OathboundRelicsMod;
 import net.bandit.oathboundrelics.entity.HeavyCubeProjectileEntity;
+import net.bandit.oathboundrelics.entity.LustArrowEntity;
 import net.bandit.oathboundrelics.entity.SoulGemEntity;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
@@ -29,6 +30,15 @@ public final class EntityRegistry {
                             .clientTrackingRange(8)
                             .updateInterval(10)
                             .build(OathboundRelicsMod.MOD_ID + ":soul_gem")
+            );
+
+    public static final FabricRegistrySupplier<EntityType<LustArrowEntity>> LUST_ARROW =
+            register("lust_arrow", () ->
+                    EntityType.Builder.<LustArrowEntity>of(LustArrowEntity::new, MobCategory.MISC)
+                            .sized(0.5F, 0.5F)
+                            .clientTrackingRange(4)
+                            .updateInterval(1)
+                            .build(OathboundRelicsMod.MOD_ID + ":lust_arrow")
             );
 
     private EntityRegistry() {

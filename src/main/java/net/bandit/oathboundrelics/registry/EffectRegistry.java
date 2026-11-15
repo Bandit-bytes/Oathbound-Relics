@@ -20,6 +20,9 @@ public final class EffectRegistry {
     public static final Holder<MobEffect> PRIDE_SUPPRESSION = register("pride_suppression", PrideSuppressionMobEffect::new);
     public static final Holder<MobEffect> LOSING_PRIDE = register("losing_pride", LosingPrideMobEffect::new);
     public static final Holder<MobEffect> BRAVERY = register("bravery", BraveryMobEffect::new);
+    public static final Holder<MobEffect> DESIRE = register("desire", DesireMobEffect::new);
+    public static final Holder<MobEffect> CRAVING = register("craving", CravingMobEffect::new);
+    public static final Holder<MobEffect> ENTHRALLED = register("enthralled", EnthralledMobEffect::new);
 
     private EffectRegistry() {
     }

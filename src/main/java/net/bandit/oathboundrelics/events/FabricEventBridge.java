@@ -187,6 +187,7 @@ public final class FabricEventBridge {
         LivingHealEvent event = new LivingHealEvent(entity, amount);
         OathboundRitualEvents.onLivingHeal(event);
         VanitysEdgeEvents.onHeal(event);
+        LustEvents.onHeal(event);
         return event.getAmount();
     }
 

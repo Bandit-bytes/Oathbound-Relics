@@ -105,6 +105,32 @@ public final class OathboundConfig {
         FabricConfigBridge.defineDefault("wrath_weapon.weaknessDurationTicks", 20 * 8);
         FabricConfigBridge.defineDefault("wrath_weapon.releaseCooldownTicks", 20 * 12);
         FabricConfigBridge.defineDefault("wrath_weapon.failureSelfDamagePerStack", 1.0D);
+        FabricConfigBridge.defineDefault("lust_weapon.enabled", true);
+        FabricConfigBridge.defineDefault("lust_weapon.arrowDamage", 30.0D);
+        FabricConfigBridge.defineDefault("lust_weapon.chainDamageFalloff", 0.08D);
+        FabricConfigBridge.defineDefault("lust_weapon.minimumDamageMultiplier", 0.60D);
+        FabricConfigBridge.defineDefault("lust_weapon.maxHits", 4);
+        FabricConfigBridge.defineDefault("lust_weapon.empoweredBonusHits", 1);
+        FabricConfigBridge.defineDefault("lust_weapon.seekRange", 16.0D);
+        FabricConfigBridge.defineDefault("lust_weapon.arrowSpeed", 1.5D);
+        FabricConfigBridge.defineDefault("lust_weapon.empoweredSpeedMultiplier", 1.3D);
+        FabricConfigBridge.defineDefault("lust_weapon.turnRate", 0.30D);
+        FabricConfigBridge.defineDefault("lust_weapon.lifetimeTicks", 20 * 5);
+        FabricConfigBridge.defineDefault("lust_weapon.healOnKill", 2.0D);
+        FabricConfigBridge.defineDefault("lust_weapon.maxDesireStacks", 5);
+        FabricConfigBridge.defineDefault("lust_weapon.desireDurationTicks", 20 * 20);
+        FabricConfigBridge.defineDefault("lust_weapon.wanderingEye", true);
+        FabricConfigBridge.defineDefault("lust_weapon.cravingDurationTicks", 20 * 15);
+        FabricConfigBridge.defineDefault("lust_weapon.cravingHealingMultiplier", 0.5D);
+        FabricConfigBridge.defineDefault("lust_weapon.cravingExhaustionPerTick", 0.01D);
+        FabricConfigBridge.defineDefault("lust_weapon.killsExtendChain", true);
+        FabricConfigBridge.defineDefault("lust_weapon.maxChainHits", 12);
+        FabricConfigBridge.defineDefault("lust_weapon.killLifetimeRefundTicks", 40);
+        FabricConfigBridge.defineDefault("lust_weapon.obsession", true);
+        FabricConfigBridge.defineDefault("lust_weapon.lifestealPercent", 0.15D);
+        FabricConfigBridge.defineDefault("lust_weapon.freeArrows", true);
+        FabricConfigBridge.defineDefault("lust_weapon.empoweredArrowCount", 3);
+        FabricConfigBridge.defineDefault("lust_weapon.enthrallDurationTicks", 60);
         FabricConfigBridge.defineDefault("bearer_curios.oathbound_reliquary.enabled", true);
         FabricConfigBridge.defineDefault("bearer_curios.oathbound_reliquary.bonusCharmSlots", 2);
         FabricConfigBridge.defineDefault("bearer_curios.oathbound_reliquary.lowHealthThreshold", 10.0D);
@@ -391,6 +417,32 @@ public final class OathboundConfig {
     public static int ruinwakeWeaknessDurationTicks() { return I("wrath_weapon.weaknessDurationTicks", 20 * 8); }
     public static int ruinwakeReleaseCooldownTicks() { return I("wrath_weapon.releaseCooldownTicks", 20 * 12); }
     public static double ruinwakeFailureSelfDamagePerStack() { return D("wrath_weapon.failureSelfDamagePerStack", 1.0D); }
+    public static boolean enableHeartseeker() { return B("lust_weapon.enabled", true); }
+    public static double heartseekerArrowDamage() { return D("lust_weapon.arrowDamage", 30.0D); }
+    public static double heartseekerChainDamageFalloff() { return D("lust_weapon.chainDamageFalloff", 0.08D); }
+    public static double heartseekerMinimumDamageMultiplier() { return D("lust_weapon.minimumDamageMultiplier", 0.60D); }
+    public static int heartseekerMaxHits() { return I("lust_weapon.maxHits", 4); }
+    public static int heartseekerEmpoweredBonusHits() { return I("lust_weapon.empoweredBonusHits", 1); }
+    public static double heartseekerSeekRange() { return D("lust_weapon.seekRange", 16.0D); }
+    public static double heartseekerArrowSpeed() { return D("lust_weapon.arrowSpeed", 1.5D); }
+    public static double heartseekerEmpoweredSpeedMultiplier() { return D("lust_weapon.empoweredSpeedMultiplier", 1.3D); }
+    public static double heartseekerTurnRate() { return D("lust_weapon.turnRate", 0.30D); }
+    public static int heartseekerLifetimeTicks() { return I("lust_weapon.lifetimeTicks", 20 * 5); }
+    public static double heartseekerHealOnKill() { return D("lust_weapon.healOnKill", 2.0D); }
+    public static int heartseekerMaxDesireStacks() { return I("lust_weapon.maxDesireStacks", 5); }
+    public static int heartseekerDesireDurationTicks() { return I("lust_weapon.desireDurationTicks", 20 * 20); }
+    public static boolean heartseekerWanderingEye() { return B("lust_weapon.wanderingEye", true); }
+    public static int heartseekerCravingDurationTicks() { return I("lust_weapon.cravingDurationTicks", 20 * 15); }
+    public static double heartseekerCravingHealingMultiplier() { return D("lust_weapon.cravingHealingMultiplier", 0.5D); }
+    public static double heartseekerCravingExhaustionPerTick() { return D("lust_weapon.cravingExhaustionPerTick", 0.01D); }
+    public static boolean heartseekerKillsExtendChain() { return B("lust_weapon.killsExtendChain", true); }
+    public static int heartseekerMaxChainHits() { return I("lust_weapon.maxChainHits", 12); }
+    public static int heartseekerKillLifetimeRefundTicks() { return I("lust_weapon.killLifetimeRefundTicks", 40); }
+    public static boolean heartseekerObsession() { return B("lust_weapon.obsession", true); }
+    public static double heartseekerLifestealPercent() { return D("lust_weapon.lifestealPercent", 0.15D); }
+    public static boolean heartseekerFreeArrows() { return B("lust_weapon.freeArrows", true); }
+    public static int heartseekerEmpoweredArrowCount() { return I("lust_weapon.empoweredArrowCount", 3); }
+    public static int heartseekerEnthrallDurationTicks() { return I("lust_weapon.enthrallDurationTicks", 60); }
     public static boolean enableOathboundReliquary() { return B("bearer_curios.oathbound_reliquary.enabled", true); }
     public static int oathboundReliquaryBonusCharmSlots() { return I("bearer_curios.oathbound_reliquary.bonusCharmSlots", 2); }
     public static double oathboundReliquaryLowHealthThreshold() { return D("bearer_curios.oathbound_reliquary.lowHealthThreshold", 10.0D); }

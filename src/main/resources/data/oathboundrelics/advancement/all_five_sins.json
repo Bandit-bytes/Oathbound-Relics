@@ -1,0 +1,83 @@
+{
+  "parent": "oathboundrelics:all_four_sins",
+  "display": {
+    "icon": {
+      "id": "oathboundrelics:heartseeker"
+    },
+    "title": "The Fifth Hunger",
+    "description": "Gather Sloth, Pride, Envy, Wrath, and Lust into your hands.",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "has_sloth_weapon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "oathboundrelics:lethargic_greatsword"
+          }
+        ]
+      }
+    },
+    "has_pride_weapon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "oathboundrelics:vanitys_edge"
+          }
+        ]
+      }
+    },
+    "has_envy_weapon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "oathboundrelics:covetfang"
+          }
+        ]
+      }
+    },
+    "has_wrath_weapon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "oathboundrelics:ruinwake"
+          }
+        ]
+      }
+    },
+    "has_lust_weapon": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": "oathboundrelics:heartseeker"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sloth_weapon"
+    ],
+    [
+      "has_pride_weapon"
+    ],
+    [
+      "has_envy_weapon"
+    ],
+    [
+      "has_wrath_weapon"
+    ],
+    [
+      "has_lust_weapon"
+    ]
+  ]
+}

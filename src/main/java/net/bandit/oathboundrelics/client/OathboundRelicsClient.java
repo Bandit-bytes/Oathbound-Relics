@@ -3,6 +3,7 @@ package net.bandit.oathboundrelics.client;
 import dev.emi.trinkets.api.client.TrinketRendererRegistry;
 import net.bandit.oathboundrelics.client.altar.NativeAltarRenderer;
 import net.bandit.oathboundrelics.client.renderer.HeavyCubeProjectileRenderer;
+import net.bandit.oathboundrelics.client.renderer.LustArrowRenderer;
 import net.bandit.oathboundrelics.client.renderer.SoulGemRenderer;
 import net.bandit.oathboundrelics.client.renderer.SoulLanternTrinketRenderer;
 import net.bandit.oathboundrelics.registry.BlockRegistry;
@@ -31,7 +32,9 @@ public class OathboundRelicsClient implements ClientModInitializer {
         );
         EntityRendererRegistry.register(EntityRegistry.HEAVY_CUBE_PROJECTILE.get(), HeavyCubeProjectileRenderer::new);
         EntityRendererRegistry.register(EntityRegistry.SOUL_GEM.get(), SoulGemRenderer::new);
+        EntityRendererRegistry.register(EntityRegistry.LUST_ARROW.get(), LustArrowRenderer::new);
         TitansRemnantItemProperties.register();
+        HeartseekerItemProperties.register();
         SkybrandClientInput.register();
     }
 }

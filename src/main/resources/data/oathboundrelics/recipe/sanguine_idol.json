@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GSG",
+    "CNC",
+    "GBG"
+  ],
+  "key": {
+    "G": {
+      "item": "minecraft:ghast_tear"
+    },
+    "S": {
+      "item": "minecraft:shulker_shell"
+    },
+    "C": {
+      "item": "minecraft:crimson_roots"
+    },
+    "N": {
+      "item": "oathboundrelics:oblivion_stone"
+    },
+    "B": {
+      "item": "minecraft:bow"
+    }
+  },
+  "result": {
+    "id": "oathboundrelics:sanguine_idol",
+    "count": 1
+  }
+}
