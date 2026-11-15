@@ -6,7 +6,7 @@
   "pages": [
     {
       "type": "patchouli:text",
-      "text": "Four late-game weapons: $(l)Sloth$(), $(l)Pride$(), $(l)Envy$(), and $(l)Wrath$(). Each is very strong and has a serious drawback."
+      "text": "Five late-game weapons: $(l)Sloth$(), $(l)Pride$(), $(l)Envy$(), $(l)Wrath$(), and $(l)Lust$(). Each is very strong and has a serious drawback."
     },
     {
       "type": "patchouli:text",

@@ -1,0 +1,39 @@
+{
+  "name": "Lust: Heartseeker",
+  "icon": "oathboundrelics:heartseeker",
+  "category": "oathboundrelics:40_sin_weapons",
+  "sortnum": 25,
+  "pages": [
+    {
+      "type": "patchouli:spotlight",
+      "item": "oathboundrelics:heartseeker",
+      "text": "A bow whose fully drawn arrows hunt on their own, feeding on every kill. Draws twice as fast as a bow and needs no arrows."
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Insatiable Shot$()$(br)$(li)A full draw fires a seeking arrow that ignores gravity$(li)It chains between targets, starting with four hits$(li)Every kill adds a hit and extends its life, up to twelve hits$(li)With nothing new to chase, it circles back and strikes its last target again$(li)A partial draw fires an ordinary arrow"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Feeding$()$(br)$(li)Every hit heals you for 15% of the damage dealt$(li)Targets that survive are $(l)Enthralled$() for 3 seconds: they ignore you and attack nearby monsters. Bosses are immune$(li)Bow enchantments still apply"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Desire$()$(br)$(li)Each arrow kill heals you and adds a stack of $(l)Desire$()$(li)At five stacks, your next full draw fires $(l)three$() seeking arrows that hit one extra target and fly faster"
+    },
+    {
+      "type": "patchouli:text",
+      "text": "$(l)Wandering Eye$()$(br)$(li)Hostile mobs are always chased first$(li)With none in range, the arrow chases any other living thing, including villagers and golems, but never players or your own pets$(li)An arrow that kills nothing gives you $(l)Craving$(): healing is halved and hunger drains faster until your next arrow kill"
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "oathboundrelics:sanguine_idol",
+      "text": "First craft the $(l)Sanguine Idol$()."
+    },
+    {
+      "type": "patchouli:crafting",
+      "recipe": "oathboundrelics:heartseeker",
+      "text": "Then combine $(l)Void Ashes$(), the $(l)Tablet of Longing$(), the $(l)Sanguine Idol$(), and a $(l)Nebula Ring$()."
+    }
+  ]
+}

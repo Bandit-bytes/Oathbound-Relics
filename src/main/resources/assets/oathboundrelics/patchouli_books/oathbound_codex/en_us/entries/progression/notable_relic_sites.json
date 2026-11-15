@@ -18,7 +18,7 @@
     },
     {
       "type": "patchouli:text",
-      "text": "$(l)Ruins, Trials & the Sea$()$(br)Trail Ruins and Trial Chambers: Clot of Stubborn Ichor.$(br)Woodland Mansions: Chalice of the Bloodsworn.$(br)Desert Pyramids: Phial of Quenched Embers.$(br)Shipwrecks, large ocean ruins, and rare trail ruins: Pendant of the Drowned Choir."
+      "text": "$(l)Ruins, Trials & the Sea$()$(br)Trail Ruins and Trial Chambers: Clot of Stubborn Ichor.$(br)Woodland Mansions: Chalice of the Bloodsworn and Tablet of Longing.$(br)Desert Pyramids: Phial of Quenched Embers.$(br)Shipwrecks, large ocean ruins, and rare trail ruins: Pendant of the Drowned Choir.$(br)Rare trail ruins: Tablet of Longing."
     }
   ]
 }

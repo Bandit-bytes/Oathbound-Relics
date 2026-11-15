@@ -2,6 +2,7 @@ package net.bandit.oathboundrelics.client;
 
 import net.bandit.oathboundrelics.OathboundRelicsMod;
 import net.bandit.oathboundrelics.client.renderer.HeavyCubeProjectileRenderer;
+import net.bandit.oathboundrelics.client.renderer.LustArrowRenderer;
 import net.bandit.oathboundrelics.client.renderer.SoulGemRenderer;
 import net.bandit.oathboundrelics.client.renderer.SoulLanternCurioRenderer;
 import net.bandit.oathboundrelics.client.altar.NativeAltarRenderer;
@@ -33,6 +34,7 @@ public final class ClientEvents {
         event.enqueueWork(() -> {
             CuriosRendererRegistry.register(ItemRegistry.SOUL_LANTERN.get(), SoulLanternCurioRenderer::new);
             ItemBlockRenderTypes.setRenderLayer(BlockRegistry.SOUL_LANTERN_BLOCK.get(), RenderType.cutout());
+            HeartseekerItemProperties.register();
         });
     }
 
@@ -45,6 +47,10 @@ public final class ClientEvents {
         event.registerEntityRenderer(
                 EntityRegistry.SOUL_GEM.get(),
                 SoulGemRenderer::new
+        );
+        event.registerEntityRenderer(
+                EntityRegistry.LUST_ARROW.get(),
+                LustArrowRenderer::new
         );
         event.registerBlockEntityRenderer(
                 BlockEntityRegistry.RITE_OF_SEVERANCE_BE.get(),

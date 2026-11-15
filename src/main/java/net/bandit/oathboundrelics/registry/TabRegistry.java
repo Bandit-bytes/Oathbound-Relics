@@ -57,10 +57,12 @@ public class TabRegistry {
             ItemRegistry.TABLET_OF_EXALTATION,
             ItemRegistry.TABLET_OF_STILLNESS,
             ItemRegistry.TABLET_OF_VENGEANCE,
+            ItemRegistry.TABLET_OF_LONGING,
             ItemRegistry.BURDENED_FLAIL_IDOL,
             ItemRegistry.MIRRORSTEEL_IDOL,
             ItemRegistry.HOLLOW_FANG_IDOL,
             ItemRegistry.GRUDGEBOUND_IDOL,
+            ItemRegistry.SANGUINE_IDOL,
             ItemRegistry.VOID_ASHES,
             ItemRegistry.COLOSSUS_HEART,
             ItemRegistry.EMBER_SEED,
@@ -83,7 +85,8 @@ public class TabRegistry {
             ItemRegistry.LETHARGIC_GREATSWORD,
             ItemRegistry.VANITYS_EDGE,
             ItemRegistry.COVETFANG,
-            ItemRegistry.RUINWAKE
+            ItemRegistry.RUINWAKE,
+            ItemRegistry.HEARTSEEKER
     );
 
     public static final Supplier<CreativeModeTab> OATHBOUND_TAB = CREATIVE_MODE_TABS.register(

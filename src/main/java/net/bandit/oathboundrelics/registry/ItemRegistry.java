@@ -258,6 +258,12 @@ public final class ItemRegistry {
             new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant()
     );
 
+    public static final Supplier<Item> HEARTSEEKER = ITEMS.registerItem(
+            "heartseeker",
+            HeartseekerItem::new,
+            new Item.Properties().stacksTo(1).durability(2400).rarity(Rarity.EPIC).fireResistant()
+    );
+
     public static final Supplier<Item> OBLIVION_STONE = ITEMS.registerItem(
             "oblivion_stone",
             OblivionStoneItem::new,
@@ -384,6 +390,22 @@ public final class ItemRegistry {
             () -> new SinIdolItem(
                     new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant(),
                     "grudgebound_idol"
+            )
+    );
+
+    public static final Supplier<Item> TABLET_OF_LONGING = ITEMS.register(
+            "tablet_of_longing",
+            () -> new SinTabletItem(
+                    new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant(),
+                    "tablet_of_longing"
+            )
+    );
+
+    public static final Supplier<Item> SANGUINE_IDOL = ITEMS.register(
+            "sanguine_idol",
+            () -> new SinIdolItem(
+                    new Item.Properties().stacksTo(1).rarity(Rarity.EPIC).fireResistant(),
+                    "sanguine_idol"
             )
     );
 

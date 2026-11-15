@@ -368,6 +368,33 @@ public final class OathboundConfig {
     public final ModConfigSpec.IntValue ruinwakeReleaseCooldownTicks;
     public final ModConfigSpec.DoubleValue ruinwakeFailureSelfDamagePerStack;
 
+    public final ModConfigSpec.BooleanValue enableHeartseeker;
+    public final ModConfigSpec.DoubleValue heartseekerArrowDamage;
+    public final ModConfigSpec.DoubleValue heartseekerChainDamageFalloff;
+    public final ModConfigSpec.DoubleValue heartseekerMinimumDamageMultiplier;
+    public final ModConfigSpec.IntValue heartseekerMaxHits;
+    public final ModConfigSpec.IntValue heartseekerEmpoweredBonusHits;
+    public final ModConfigSpec.DoubleValue heartseekerSeekRange;
+    public final ModConfigSpec.DoubleValue heartseekerArrowSpeed;
+    public final ModConfigSpec.DoubleValue heartseekerEmpoweredSpeedMultiplier;
+    public final ModConfigSpec.DoubleValue heartseekerTurnRate;
+    public final ModConfigSpec.IntValue heartseekerLifetimeTicks;
+    public final ModConfigSpec.DoubleValue heartseekerHealOnKill;
+    public final ModConfigSpec.IntValue heartseekerMaxDesireStacks;
+    public final ModConfigSpec.IntValue heartseekerDesireDurationTicks;
+    public final ModConfigSpec.BooleanValue heartseekerWanderingEye;
+    public final ModConfigSpec.IntValue heartseekerCravingDurationTicks;
+    public final ModConfigSpec.DoubleValue heartseekerCravingHealingMultiplier;
+    public final ModConfigSpec.DoubleValue heartseekerCravingExhaustionPerTick;
+    public final ModConfigSpec.BooleanValue heartseekerKillsExtendChain;
+    public final ModConfigSpec.IntValue heartseekerMaxChainHits;
+    public final ModConfigSpec.IntValue heartseekerKillLifetimeRefundTicks;
+    public final ModConfigSpec.BooleanValue heartseekerObsession;
+    public final ModConfigSpec.DoubleValue heartseekerLifestealPercent;
+    public final ModConfigSpec.BooleanValue heartseekerFreeArrows;
+    public final ModConfigSpec.IntValue heartseekerEmpoweredArrowCount;
+    public final ModConfigSpec.IntValue heartseekerEnthrallDurationTicks;
+
 
     private OathboundConfig(ModConfigSpec.Builder builder) {
         builder.push("oathbound_relic");
@@ -1259,6 +1286,114 @@ public final class OathboundConfig {
 
         builder.pop();
 
+        builder.push("lust_weapon");
+
+        enableHeartseeker = builder
+                .comment("If true, Lust: Heartseeker is enabled.")
+                .define("enabled", true);
+
+        heartseekerArrowDamage = builder
+                .comment("Damage dealt by the first hit of a fully drawn Heartseeker arrow, before enchantments.")
+                .defineInRange("arrowDamage", 30.0D, 0.0D, 1000.0D);
+
+        heartseekerChainDamageFalloff = builder
+                .comment("Damage lost per previous hit as the arrow chains. 0.08 = each hit deals 8 percent less than the first.")
+                .defineInRange("chainDamageFalloff", 0.08D, 0.0D, 1.0D);
+
+        heartseekerMinimumDamageMultiplier = builder
+                .comment("Lowest damage multiplier a chained hit can fall to.")
+                .defineInRange("minimumDamageMultiplier", 0.60D, 0.0D, 1.0D);
+
+        heartseekerMaxHits = builder
+                .comment("How many hits a fully drawn arrow starts with before vanishing.")
+                .defineInRange("maxHits", 4, 1, 64);
+
+        heartseekerEmpoweredBonusHits = builder
+                .comment("Extra hits granted to a shot fired at maximum Desire.")
+                .defineInRange("empoweredBonusHits", 1, 0, 64);
+
+        heartseekerSeekRange = builder
+                .comment("Range in blocks the arrow searches for its next target.")
+                .defineInRange("seekRange", 16.0D, 1.0D, 64.0D);
+
+        heartseekerArrowSpeed = builder
+                .comment("Arrow speed in blocks per tick while seeking.")
+                .defineInRange("arrowSpeed", 1.5D, 0.2D, 5.0D);
+
+        heartseekerEmpoweredSpeedMultiplier = builder
+                .comment("Speed multiplier for a shot fired at maximum Desire.")
+                .defineInRange("empoweredSpeedMultiplier", 1.3D, 1.0D, 5.0D);
+
+        heartseekerTurnRate = builder
+                .comment("How sharply the arrow turns toward its target each tick. 0 = never turns, 1 = turns instantly.")
+                .defineInRange("turnRate", 0.30D, 0.01D, 1.0D);
+
+        heartseekerLifetimeTicks = builder
+                .comment("Ticks before an arrow vanishes on its own.")
+                .defineInRange("lifetimeTicks", 20 * 5, 20, 20 * 60);
+
+        heartseekerHealOnKill = builder
+                .comment("Health restored to the wielder for each kill made by the arrow.")
+                .defineInRange("healOnKill", 2.0D, 0.0D, 100.0D);
+
+        heartseekerMaxDesireStacks = builder
+                .comment("Desire stacks needed to empower the next shot. Each arrow kill grants one stack.")
+                .defineInRange("maxDesireStacks", 5, 1, 64);
+
+        heartseekerDesireDurationTicks = builder
+                .comment("How long Desire lasts in ticks. Refreshed on each kill.")
+                .defineInRange("desireDurationTicks", 20 * 20, 20, 20 * 60 * 60);
+
+        heartseekerWanderingEye = builder
+                .comment("If true, the arrow chases passive and neutral creatures (never players or your own pets) when no hostile mob is in range.")
+                .define("wanderingEye", true);
+
+        heartseekerCravingDurationTicks = builder
+                .comment("Duration of Craving in ticks, gained when an arrow vanishes without killing anything.")
+                .defineInRange("cravingDurationTicks", 20 * 15, 0, 20 * 60 * 60);
+
+        heartseekerCravingHealingMultiplier = builder
+                .comment("Healing multiplier while Craving. 0.5 = all healing is halved.")
+                .defineInRange("cravingHealingMultiplier", 0.5D, 0.0D, 1.0D);
+
+        heartseekerCravingExhaustionPerTick = builder
+                .comment("Food exhaustion added each tick while Craving. Hunger I adds 0.005.")
+                .defineInRange("cravingExhaustionPerTick", 0.01D, 0.0D, 1.0D);
+
+        heartseekerKillsExtendChain = builder
+                .comment("If true, each kill gives the arrow one more hit and extends its lifetime.")
+                .define("killsExtendChain", true);
+
+        heartseekerMaxChainHits = builder
+                .comment("The most hits one arrow can ever make, including hits gained from kills.")
+                .defineInRange("maxChainHits", 12, 1, 256);
+
+        heartseekerKillLifetimeRefundTicks = builder
+                .comment("Ticks of lifetime restored to the arrow on each kill.")
+                .defineInRange("killLifetimeRefundTicks", 40, 0, 20 * 60);
+
+        heartseekerObsession = builder
+                .comment("If true, when no new target is in range the arrow loops back and strikes its last target again.")
+                .define("obsession", true);
+
+        heartseekerLifestealPercent = builder
+                .comment("Fraction of each arrow hit's damage returned to the wielder as health. 0.15 = 15 percent.")
+                .defineInRange("lifestealPercent", 0.15D, 0.0D, 10.0D);
+
+        heartseekerFreeArrows = builder
+                .comment("If true, Heartseeker needs no arrows and never consumes them.")
+                .define("freeArrows", true);
+
+        heartseekerEmpoweredArrowCount = builder
+                .comment("Seeking arrows fired by a shot at maximum Desire.")
+                .defineInRange("empoweredArrowCount", 3, 1, 16);
+
+        heartseekerEnthrallDurationTicks = builder
+                .comment("Ticks a surviving target stays Enthralled: it will not target players and attacks nearby monsters instead. Bosses are immune. 0 disables.")
+                .defineInRange("enthrallDurationTicks", 60, 0, 20 * 60);
+
+        builder.pop();
+
         builder.push("bearer_curios");
 
         builder.push("oathbound_reliquary");
@@ -1734,6 +1869,33 @@ public final class OathboundConfig {
     public static int ruinwakeWeaknessDurationTicks() { return CONFIG.ruinwakeWeaknessDurationTicks.get(); }
     public static int ruinwakeReleaseCooldownTicks() { return CONFIG.ruinwakeReleaseCooldownTicks.get(); }
     public static double ruinwakeFailureSelfDamagePerStack() { return CONFIG.ruinwakeFailureSelfDamagePerStack.get(); }
+
+    public static boolean enableHeartseeker() { return CONFIG.enableHeartseeker.get(); }
+    public static double heartseekerArrowDamage() { return CONFIG.heartseekerArrowDamage.get(); }
+    public static double heartseekerChainDamageFalloff() { return CONFIG.heartseekerChainDamageFalloff.get(); }
+    public static double heartseekerMinimumDamageMultiplier() { return CONFIG.heartseekerMinimumDamageMultiplier.get(); }
+    public static int heartseekerMaxHits() { return CONFIG.heartseekerMaxHits.get(); }
+    public static int heartseekerEmpoweredBonusHits() { return CONFIG.heartseekerEmpoweredBonusHits.get(); }
+    public static double heartseekerSeekRange() { return CONFIG.heartseekerSeekRange.get(); }
+    public static double heartseekerArrowSpeed() { return CONFIG.heartseekerArrowSpeed.get(); }
+    public static double heartseekerEmpoweredSpeedMultiplier() { return CONFIG.heartseekerEmpoweredSpeedMultiplier.get(); }
+    public static double heartseekerTurnRate() { return CONFIG.heartseekerTurnRate.get(); }
+    public static int heartseekerLifetimeTicks() { return CONFIG.heartseekerLifetimeTicks.get(); }
+    public static double heartseekerHealOnKill() { return CONFIG.heartseekerHealOnKill.get(); }
+    public static int heartseekerMaxDesireStacks() { return CONFIG.heartseekerMaxDesireStacks.get(); }
+    public static int heartseekerDesireDurationTicks() { return CONFIG.heartseekerDesireDurationTicks.get(); }
+    public static boolean heartseekerWanderingEye() { return CONFIG.heartseekerWanderingEye.get(); }
+    public static int heartseekerCravingDurationTicks() { return CONFIG.heartseekerCravingDurationTicks.get(); }
+    public static double heartseekerCravingHealingMultiplier() { return CONFIG.heartseekerCravingHealingMultiplier.get(); }
+    public static double heartseekerCravingExhaustionPerTick() { return CONFIG.heartseekerCravingExhaustionPerTick.get(); }
+    public static boolean heartseekerKillsExtendChain() { return CONFIG.heartseekerKillsExtendChain.get(); }
+    public static int heartseekerMaxChainHits() { return CONFIG.heartseekerMaxChainHits.get(); }
+    public static int heartseekerKillLifetimeRefundTicks() { return CONFIG.heartseekerKillLifetimeRefundTicks.get(); }
+    public static boolean heartseekerObsession() { return CONFIG.heartseekerObsession.get(); }
+    public static double heartseekerLifestealPercent() { return CONFIG.heartseekerLifestealPercent.get(); }
+    public static boolean heartseekerFreeArrows() { return CONFIG.heartseekerFreeArrows.get(); }
+    public static int heartseekerEmpoweredArrowCount() { return CONFIG.heartseekerEmpoweredArrowCount.get(); }
+    public static int heartseekerEnthrallDurationTicks() { return CONFIG.heartseekerEnthrallDurationTicks.get(); }
 
     public static boolean giveStarterOathboundRelic() { return CONFIG.giveStarterOathboundRelic.get(); }
     public static boolean enableBrandkeepersMercy() { return CONFIG.enableBrandkeepersMercy.get(); }

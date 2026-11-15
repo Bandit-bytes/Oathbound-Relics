@@ -37,6 +37,15 @@ public final class EffectRegistry {
     public static final DeferredHolder<MobEffect, MobEffect> BRAVERY =
             MOB_EFFECTS.register("bravery", BraveryMobEffect::new);
 
+    public static final DeferredHolder<MobEffect, MobEffect> DESIRE =
+            MOB_EFFECTS.register("desire", DesireMobEffect::new);
+
+    public static final DeferredHolder<MobEffect, MobEffect> CRAVING =
+            MOB_EFFECTS.register("craving", CravingMobEffect::new);
+
+    public static final DeferredHolder<MobEffect, MobEffect> ENTHRALLED =
+            MOB_EFFECTS.register("enthralled", EnthralledMobEffect::new);
+
 
 
     private EffectRegistry() {
