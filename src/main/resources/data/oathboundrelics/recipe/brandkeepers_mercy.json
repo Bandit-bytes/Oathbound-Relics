@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "PCP",
+    "CAC",
+    "POP"
+  ],
+  "key": {
+    "P": {
+      "tag": "minecraft:small_flowers"
+    },
+    "C": {
+      "item": "minecraft:golden_carrot"
+    },
+    "A": {
+      "item": "minecraft:golden_apple"
+    },
+    "O": {
+      "item": "oathboundrelics:oblivion_stone"
+    }
+  },
+  "result": {
+    "id": "oathboundrelics:brandkeepers_mercy",
+    "count": 1
+  }
+}
